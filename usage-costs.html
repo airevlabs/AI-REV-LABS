@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Pricing | AI Rev Labs</title>
+    <meta name="description" content="AI Rev Labs service pricing and usage costs. Clean, transparent, and easy to understand.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-bg: #ffffff;
+            --primary-text: #000000;
+            --secondary-text: #666666;
+            --accent-bg: #f9fafb;
+            --border-color: #e5e7eb;
+            --dot-color: #e5e5e5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen, ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            background-color: var(--primary-bg);
+            background-image: radial-gradient(circle, var(--dot-color) 1px, transparent 1px);
+            background-size: 30px 30px;
+            color: var(--primary-text);
+            line-height: 1.5;
+            padding: 4rem 1.5rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Back Link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--secondary-text);
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--primary-text);
+        }
+
+        .back-link svg {
+            margin-right: 0.5rem;
+            transition: transform 0.2s;
+        }
+
+        .back-link:hover svg {
+            transform: translateX(-4px);
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.125rem;
+            color: var(--secondary-text);
+            max-width: 600px;
+        }
+
+        /* Pricing Table Wrapper */
+        .table-wrapper {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .table-scroll {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+
+        th {
+            background: var(--accent-bg);
+            padding: 1rem 1.5rem;
+            text-align: left;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: #6b7280;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            white-space: nowrap;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: rgba(249, 250, 251, 0.5);
+        }
+
+        /* Specific Table Styling */
+        .service-name {
+            font-weight: 600;
+            color: var(--primary-text);
+            border-left: 4px solid var(--primary-text);
+        }
+
+        .unit-type {
+            color: #9ca3af;
+            text-align: center;
+        }
+
+        .raw-price {
+            font-family: ui-monospace, sfmono-regular, menlo, monaco, consolas, "Liberation Mono", "Courier New", monospace;
+            color: #4b5563;
+        }
+
+        .value-col {
+            text-align: center;
+            font-weight: 500;
+            color: var(--primary-text);
+            background-color: rgba(249, 250, 251, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 640px) {
+            h1 { font-size: 2rem; }
+            body { padding: 2rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Back Link -->
+        <a href="https://airevlabs.com" class="back-link">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+            </svg>
+            Back to Home
+        </a>
+
+        <!-- Header -->
+        <header>
+            <h1>Service Pricing & Usage Costs</h1>
+            <p class="subtitle">Transparency matters. Review the usage-based pricing for all AI-powered services and platform interactions below.</p>
+        </header>
+
+        <!-- Pricing Table -->
+        <div class="table-wrapper">
+            <div class="table-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th style="text-align: center;">Unit</th>
+                            <th>Charge per Unit</th>
+                            <th style="text-align: center;">Units for $5</th>
+                            <th style="text-align: center;">Units for $10</th>
+                            <th style="text-align: center;">Units for $20</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="service-name">Content AI (Words)</td>
+                            <td class="unit-type">Words</td>
+                            <td class="raw-price">$0.000095</td>
+                            <td class="value-col">52,910</td>
+                            <td class="value-col">105,820</td>
+                            <td class="value-col">211,640</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Content AI (Images)</td>
+                            <td class="unit-type">Images</td>
+                            <td class="raw-price">$0.063000</td>
+                            <td class="value-col">79</td>
+                            <td class="value-col">159</td>
+                            <td class="value-col">317</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Workflows (Premium)</td>
+                            <td class="unit-type">Executions</td>
+                            <td class="raw-price">$0.010500</td>
+                            <td class="value-col">476</td>
+                            <td class="value-col">952</td>
+                            <td class="value-col">1,905</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Workflows (AI Input)</td>
+                            <td class="unit-type">Words</td>
+                            <td class="raw-price">$0.000001</td>
+                            <td class="value-col">5,952,381</td>
+                            <td class="value-col">11,904,762</td>
+                            <td class="value-col">23,809,524</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Workflows (AI Output)</td>
+                            <td class="unit-type">Words</td>
+                            <td class="raw-price">$0.000003</td>
+                            <td class="value-col">1,488,095</td>
+                            <td class="value-col">2,976,190</td>
+                            <td class="value-col">5,952,381</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">WhatsApp Usage</td>
+                            <td class="unit-type">Uses</td>
+                            <td class="raw-price">$0.077700</td>
+                            <td class="value-col">64</td>
+                            <td class="value-col">129</td>
+                            <td class="value-col">257</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Funnel AI</td>
+                            <td class="unit-type">Runs</td>
+                            <td class="raw-price">$1.039500</td>
+                            <td class="value-col">5</td>
+                            <td class="value-col">10</td>
+                            <td class="value-col">19</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Email Verification</td>
+                            <td class="unit-type">Verifications</td>
+                            <td class="raw-price">$0.002625</td>
+                            <td class="value-col">1,905</td>
+                            <td class="value-col">3,810</td>
+                            <td class="value-col">7,619</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Emails</td>
+                            <td class="unit-type">Emails</td>
+                            <td class="raw-price">$0.000735</td>
+                            <td class="value-col">6,803</td>
+                            <td class="value-col">13,605</td>
+                            <td class="value-col">27,211</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Domain Purchase</td>
+                            <td class="unit-type">Domains</td>
+                            <td class="raw-price">$10.500000</td>
+                            <td class="value-col">0</td>
+                            <td class="value-col">1</td>
+                            <td class="value-col">2</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Conversation AI</td>
+                            <td class="unit-type">Messages</td>
+                            <td class="raw-price">$0.021000</td>
+                            <td class="value-col">238</td>
+                            <td class="value-col">476</td>
+                            <td class="value-col">952</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Voice AI</td>
+                            <td class="unit-type">Minutes</td>
+                            <td class="raw-price">$0.136500</td>
+                            <td class="value-col">37</td>
+                            <td class="value-col">73</td>
+                            <td class="value-col">147</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Calling (Outgoing)</td>
+                            <td class="unit-type">Minutes</td>
+                            <td class="raw-price">$0.014700</td>
+                            <td class="value-col">340</td>
+                            <td class="value-col">680</td>
+                            <td class="value-col">1,361</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Calling (Incoming)</td>
+                            <td class="unit-type">Minutes</td>
+                            <td class="raw-price">$0.008925</td>
+                            <td class="value-col">560</td>
+                            <td class="value-col">1,120</td>
+                            <td class="value-col">2,241</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Text (SMS)</td>
+                            <td class="unit-type">Segments</td>
+                            <td class="raw-price">$0.011715</td>
+                            <td class="value-col">426</td>
+                            <td class="value-col">853</td>
+                            <td class="value-col">1,707</td>
+                        </tr>
+                        <tr>
+                            <td class="service-name">Agent Studio</td>
+                            <td class="unit-type">Words</td>
+                            <td class="raw-price">$0.00000035</td>
+                            <td class="value-col">14,285,714</td>
+                            <td class="value-col">28,571,429</td>
+                            <td class="value-col">57,142,857</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p style="margin-bottom: 0.5rem;">Pricing is based on third party costs charged to AI REV LABS. Pricing is subject to change based on third party prcing updates.</p>
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> AI Rev Labs. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

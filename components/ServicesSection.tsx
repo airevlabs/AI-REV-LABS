@@ -8,44 +8,86 @@ export const ServicesSection: React.FC = () => {
     {
       id: 'website',
       title: 'Smart Website Builds',
-      description: 'High-converting designs with integrated booking, payments, and automated CRM connections built-in.',
+      description: 'High-converting designs with integrated booking, payments, and automated CRM connections built-in. Optimized for both traditional SEO and AI Search Optimization.',
       iconName: 'Globe'
     },
     {
+      id: 'booking',
+      title: 'Booking Calendar',
+      description: 'Customers can book appointments for services, online meetings, or events with automated reminders and other features.',
+      iconName: 'Calendar'
+    },
+    {
+      id: 'crm',
+      title: 'CRM',
+      description: 'Keep all your contacts, deals, notes, and follow-ups organized in one place so nothing gets missed.',
+      iconName: 'Users'
+    },
+    {
       id: 'voice-ai',
-      title: 'AI Voice Agents',
-      description: 'Intelligent phone answering that books appointments, qualifies leads, and answers questions 24/7.',
+      title: 'AI Virtual Assistant',
+      description: 'Intelligent AI Voice Agent that books appointments, qualifies leads, and answers questions 24/7.',
       iconName: 'Phone'
     },
     {
       id: 'digital-ai',
-      title: 'Digital AI Agents',
+      title: 'AI Chatbot',
       description: 'Instant responses across your website, SMS, and social media to capture engagement instantly.',
       iconName: 'MessageSquare'
     },
     {
       id: 'reputation',
       title: 'Reputation Management',
-      description: 'Automate review requests and mitigate negative feedback to boost your online authority.',
+      description: 'Automate review requests, mitigate negative feedback, and increase 4 to 5 star reviews to boost your online reputation.',
       iconName: 'TrendingUp'
     },
     {
       id: 'local-seo',
       title: 'Local SEO',
-      description: 'Dominate local search with GMB optimization and syncing across 95+ authoritative directories.',
+      description: 'Dominate local search with Google Business Profile optimization and syncing across 75+ authoritative directories.',
       iconName: 'MapPin'
     },
     {
-      id: 'web-seo',
-      title: 'SEO & GEO Optimization',
-      description: 'Dominate traditional Google search while future-proofing your brand for Generative Engine Optimization (GEO) in AI tools like ChatGPT, Gemini, etc.',
-      iconName: 'Search'
+      id: 'reactivation',
+      title: 'Lead Reactivation',
+      description: 'Wake up your "dead" leads. We launch campaigns to re-engage cold leads and past customers to drive immediate revenue.',
+      iconName: 'Database'
     },
     {
-      id: 'reactivation',
-      title: 'Database Reactivation',
-      description: 'Wake up your "dead" leads. We launch campaigns to re-engage past prospects and drive immediate revenue.',
-      iconName: 'Database'
+      id: 'email-sms',
+      title: 'Email & SMS Campaigns',
+      description: 'Reach leads instantly with targeted email and text campaigns that can be scheduled, personalized, and tracked from one place.',
+      iconName: 'Mail'
+    },
+    {
+      id: 'social-media',
+      title: 'Social Media Planner',
+      description: 'Plan, schedule, and publish content across multiple social platforms from a single dashboard.',
+      iconName: 'Share2'
+    },
+    {
+      id: 'invoicing',
+      title: 'Invoicing & Payments',
+      description: 'Send invoices, estimates, and payment links, then automate reminders, follow-ups, and recurring billing to get paid faster. Connect major payment providers like Stripe, PayPal, Square, NMI, and Authorize.Net',
+      iconName: 'CreditCard'
+    },
+    {
+      id: 'documents',
+      title: 'Documents & Contracts',
+      description: 'Create, send, and manage documents and contracts digitally, with workflow-based delivery for faster approvals.',
+      iconName: 'FileText'
+    },
+    {
+      id: 'missed-call',
+      title: 'Missed Call Text Back',
+      description: 'Automatically text missed callers right away so you can reconnect and capture more leads fast.',
+      iconName: 'PhoneMissed'
+    },
+    {
+      id: 'workflow',
+      title: 'Workflow Automations',
+      description: 'Build smart sequences, triggers, and multi-step automations that run your business 24/7.',
+      iconName: 'Workflow'
     },
     {
       id: 'custom',
@@ -58,6 +100,14 @@ export const ServicesSection: React.FC = () => {
   const renderIcon = (name: string) => {
     switch (name) {
       case 'Globe': return <Icons.Globe className="w-6 h-6" />;
+      case 'Calendar': return <Icons.Calendar className="w-6 h-6" />;
+      case 'Users': return <Icons.Users className="w-6 h-6" />;
+      case 'Mail': return <Icons.Mail className="w-6 h-6" />;
+      case 'Share2': return <Icons.Share2 className="w-6 h-6" />;
+      case 'CreditCard': return <Icons.CreditCard className="w-6 h-6" />;
+      case 'FileText': return <Icons.FileText className="w-6 h-6" />;
+      case 'PhoneMissed': return <Icons.PhoneMissed className="w-6 h-6" />;
+      case 'Workflow': return <Icons.Workflow className="w-6 h-6" />;
       case 'Phone': return <Icons.Phone className="w-6 h-6" />;
       case 'MessageSquare': return <Icons.MessageSquare className="w-6 h-6" />;
       case 'TrendingUp': return <Icons.TrendingUp className="w-6 h-6" />;

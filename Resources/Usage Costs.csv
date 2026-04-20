@@ -1,0 +1,17 @@
+Service,Unit,Charged to Customer per Unit,Units for $5,Units for $10,Units for $20
+Content AI,Words,0.000095,52910,105820,211640
+Content AI,Images,0.063000,79,159,317
+Workflow - Premium Features,Executions,0.010500,476,952,1905
+Workflow - External AI,Input Words,0.000001,5952381,11904762,23809524
+Workflow - External AI,Output Words,0.000003,1488095,2976190,5952381
+WhatsApp Usage,Uses,0.077700,64,129,257
+Funnel AI,Funnel Runs,1.039500,5,10,19
+LC Email Verification,Verifications,0.002625,1905,3810,7619
+Email,Emails,0.000735,6803,13605,27211
+Domain Purchase,Domains,10.500000,0,1,2
+Conversation AI,Messages,0.021000,238,476,952
+Voice AI,Minutes,0.136500,37,73,147
+Calling (outgoing),Minutes,0.014700,340,680,1361
+Calling (incoming),Minutes,0.008925,560,1120,2241
+Text (SMS),Segments (160 characters),0.011715,426,853,1707
+Agent Studio,Agent Words,0.000000,14285714,28571429,57142857

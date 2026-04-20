@@ -25,12 +25,19 @@ export const Footer: React.FC = () => {
             <h4 className="font-bold text-lg mb-6">Services</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
               <li><a href="#services" className="hover:text-white transition-colors">Smart Website Builds</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">AI Voice Agents</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Digital AI Agents</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">Booking Calendar</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">CRM</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">AI Virtual Assistant</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">AI Chatbot</a></li>
               <li><a href="#services" className="hover:text-white transition-colors">Reputation Management</a></li>
               <li><a href="#services" className="hover:text-white transition-colors">Local SEO</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">SEO & GEO Optimization</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Database Reactivation</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">Lead Reactivation</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">Email & SMS Campaigns</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">Social Media Planner</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">Invoicing & Payments</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">Documents & Contracts</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">Missed Call Text Back</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">Workflow Automations</a></li>
               <li><a href="#services" className="hover:text-white transition-colors">Custom Automation</a></li>
             </ul>
           </div>
