@@ -6,40 +6,57 @@ import { PricingTier } from '../types';
 export const PricingSection: React.FC = () => {
   const tiers: PricingTier[] = [
     {
-      name: "Starter",
-      price: "$997",
-      description: "Perfect for small local businesses ready to automate basics.",
+      name: "Website Elite",
+      price: "$199",
+      description: "",
       features: [
-        "Smart Website or Funnel",
-        "Missed Call Text Back",
-        "Google Review Automation",
-        "Basic CRM Setup"
+        "Website, CRM, Booking Calendar",
+        "Form, Survey & Quiz Builders",
+        "Analytics & QR Codes",
+        "Web Chat",
+        "Blog & Online Store",
+        "Payments & Invoicing",
+        "Documents & Contracts",
+        "Mobile App to manage customers"
       ]
     },
     {
-      name: "Growth",
-      price: "$2,497",
-      description: "Complete automation suite for scaling service businesses.",
+      name: "Marketing Elite",
+      price: "$199",
+      description: "",
       features: [
-        "Everything in Starter",
-        "AI Voice Agent (Receptionist)",
-        "Database Reactivation Campaign",
-        "Advanced Workflows & Nurture",
-        "Priority Support"
+        "Email & SMS Campaigns",
+        "Social Media Planner",
+        "Ad Manager",
+        "Google Business Optimization",
+        "Listing in 40+ directories/search engines",
+        "Affiliate Manager"
+      ]
+    },
+    {
+      name: "Reputation Elite",
+      price: "$199",
+      description: "",
+      features: [
+        "Automated Review Requests",
+        "Negative Review mitigation",
+        "Ensure mostly 4-5 star reviews",
+        "AI Review Replies",
+        "Review QR Code"
+      ]
+    },
+    {
+      name: "AI Elite",
+      price: "$499",
+      description: "",
+      features: [
+        "AI Phone Receptionist",
+        "AI SMS & WhatsApp Replies",
+        "AI Web Chatbot",
+        "AI Email & Social Media Replies",
+        "AI Review Replies"
       ],
       recommended: true
-    },
-    {
-      name: "Enterprise",
-      price: "Custom",
-      description: "Tailored solutions for multi-location or complex needs.",
-      features: [
-        "Full Custom AI Development",
-        "Dedicated Account Manager",
-        "Multi-Location SEO",
-        "Custom API Integrations",
-        "White-Glove Onboarding"
-      ]
     }
   ];
 
@@ -48,30 +65,26 @@ export const PricingSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimationWrapper type="fade">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900">Simple, Transparent Pricing</h2>
-            <p className="mt-4 text-xl text-gray-600">Invest in systems that pay for themselves.</p>
+            <h2 className="text-3xl font-bold text-gray-900">Example Packages That Can Be Tailored To Your Needs</h2>
+            <p className="mt-4 text-xl text-gray-600">Every business is unique. We can create custom packages based on your specific bottlenecks. Here are some common configurations to get started.</p>
           </div>
         </AnimationWrapper>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {tiers.map((tier, index) => (
             <AnimationWrapper key={index} delay={index * 150} type="slide">
-              <div className={`h-full p-8 rounded-2xl border flex flex-col relative transition-transform hover:scale-105 duration-300 ${
+              <div className={`h-full p-8 rounded-2xl border flex flex-col transition-transform hover:scale-105 duration-300 ${
                 tier.recommended 
                   ? 'border-black shadow-xl bg-black text-white' 
                   : 'border-gray-200 bg-white text-gray-900 hover:shadow-lg'
               }`}>
-                {tier.recommended && (
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-200 text-black px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                    Most Popular
-                  </div>
-                )}
                 
                 <h3 className="text-xl font-bold mb-2">{tier.name}</h3>
-                <div className="text-3xl font-bold mb-4">{tier.price}<span className="text-lg font-normal opacity-70">{tier.price !== 'Custom' ? '/mo' : ''}</span></div>
-                <p className={`mb-8 text-sm ${tier.recommended ? 'text-gray-300' : 'text-gray-500'}`}>
-                  {tier.description}
-                </p>
+                <div className="mb-6">
+                  <div className="text-sm font-semibold opacity-80 uppercase tracking-wider mb-1">Starting at</div>
+                  <div className="text-4xl font-bold">{tier.price}<span className="text-lg font-normal opacity-70">/mo</span></div>
+                  <div className="text-xs opacity-60 mt-1 font-medium">+ Setup fees</div>
+                </div>
 
                 <ul className="space-y-4 mb-8 flex-1">
                   {tier.features.map((feature, idx) => (
@@ -82,12 +95,14 @@ export const PricingSection: React.FC = () => {
                   ))}
                 </ul>
 
-                <button className={`w-full py-3 rounded-lg font-bold transition-colors ${
+                <button 
+                  onClick={(e) => e.preventDefault()}
+                  className={`w-full py-3 rounded-lg font-bold transition-colors ${
                   tier.recommended 
                     ? 'bg-white text-black hover:bg-gray-200' 
                     : 'bg-black text-white hover:bg-gray-800'
                 }`}>
-                  Choose {tier.name}
+                  Request Custom Quote
                 </button>
               </div>
             </AnimationWrapper>
