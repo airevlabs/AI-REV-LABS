@@ -112,7 +112,7 @@ export const Hero: React.FC = () => {
               onClick={scrollToContact}
               className="px-8 py-4 bg-black text-white rounded-full font-semibold text-lg hover:bg-gray-800 transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center relative z-20"
             >
-              Schedule a Demo
+              Start Automating
               <Icons.ArrowRight className="ml-2 w-5 h-5" />
             </button>
             <button 

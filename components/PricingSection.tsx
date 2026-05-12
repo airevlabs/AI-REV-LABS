@@ -96,7 +96,10 @@ export const PricingSection: React.FC = () => {
                 </ul>
 
                 <button 
-                  onClick={(e) => e.preventDefault()}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
                   className={`w-full py-3 rounded-lg font-bold transition-colors ${
                   tier.recommended 
                     ? 'bg-white text-black hover:bg-gray-200' 

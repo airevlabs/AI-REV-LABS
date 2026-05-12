@@ -48,6 +48,7 @@ export const Footer: React.FC = () => {
               <li><a href="#hero" className="hover:text-white transition-colors">About Us</a></li>
               <li><a href="#how-it-works" className="hover:text-white transition-colors">Process</a></li>
               <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="https://app.airevlabs.com" className="hover:text-white transition-colors">Login</a></li>
             </ul>
           </div>
 
