@@ -1,5 +1,6 @@
 import React from 'react';
 import { AnimationWrapper } from './AnimationWrapper';
+import { Link } from 'react-router-dom';
 import { Icons } from './Icons';
 import { PricingTier } from '../types';
 
@@ -95,18 +96,15 @@ export const PricingSection: React.FC = () => {
                   ))}
                 </ul>
 
-                <button 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className={`w-full py-3 rounded-lg font-bold transition-colors ${
+                <Link 
+                  to="/get-started"
+                  className={`w-full py-3 rounded-lg font-bold transition-colors block text-center ${
                   tier.recommended 
                     ? 'bg-white text-black hover:bg-gray-200' 
                     : 'bg-black text-white hover:bg-gray-800'
                 }`}>
                   Request Custom Quote
-                </button>
+                </Link>
               </div>
             </AnimationWrapper>
           ))}

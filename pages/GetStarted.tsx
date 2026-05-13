@@ -3,6 +3,7 @@ import { AnimationWrapper } from '../components/AnimationWrapper';
 
 export const GetStarted: React.FC = () => {
   useEffect(() => {
+    window.scrollTo(0, 0);
     const script = document.createElement('script');
     script.src = "https://links.airevlabs.com/js/form_embed.js";
     script.async = true;

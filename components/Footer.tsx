@@ -85,8 +85,8 @@ export const Footer: React.FC = () => {
             &copy; {new Date().getFullYear()} AI Rev Labs. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm text-gray-600">
-            <a href="https://booking.airevlabs.com/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="https://booking.airevlabs.com/terms" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="https://booking.airevlabs.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="https://booking.airevlabs.com/terms" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>

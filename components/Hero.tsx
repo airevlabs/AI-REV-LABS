@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { Icons } from './Icons';
+import { Link } from 'react-router-dom';
 import { HeroCanvas } from './HeroCanvas';
 
 export const Hero: React.FC = () => {
@@ -54,9 +55,6 @@ export const Hero: React.FC = () => {
     return () => clearTimeout(timer);
   }, [text, isDeleting, loopNum, titles]);
 
-  const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   const animationLimit = 400;
   const progress = Math.min(scrollY / animationLimit, 1);
@@ -108,13 +106,13 @@ export const Hero: React.FC = () => {
           </p>
           
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
-              onClick={scrollToContact}
+            <Link 
+              to="/get-started"
               className="px-8 py-4 bg-black text-white rounded-full font-semibold text-lg hover:bg-gray-800 transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center relative z-20"
             >
               Start Automating
               <Icons.ArrowRight className="ml-2 w-5 h-5" />
-            </button>
+            </Link>
             <button 
               onClick={() => document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})}
               className="px-8 py-4 bg-white/80 backdrop-blur-sm text-black border-2 border-gray-200 rounded-full font-semibold text-lg hover:border-black transition-all flex items-center justify-center relative z-20"
