@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Icons } from './Icons';
 
 export const Footer: React.FC = () => {
@@ -24,30 +25,30 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold text-lg mb-6">Services</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
-              <li><a href="#services" className="hover:text-white transition-colors">Smart Website Builds</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Booking Calendar</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">CRM</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">AI Virtual Assistant</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">AI Chatbot</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Reputation Management</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Local SEO</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Lead Reactivation</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Email & SMS Campaigns</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Social Media Planner</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Invoicing & Payments</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Documents & Contracts</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Missed Call Text Back</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Workflow Automations</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Custom Automation</a></li>
+              <li><Link to="/services" className="hover:text-white transition-colors">Smart Website Builds</Link></li>
+              <li><Link to="/services" className="hover:text-white transition-colors">Booking Calendar</Link></li>
+              <li><Link to="/services" className="hover:text-white transition-colors">CRM</Link></li>
+              <li><Link to="/services" className="hover:text-white transition-colors">AI Phone Receptionist</Link></li>
+              <li><Link to="/services" className="hover:text-white transition-colors">AI Chatbot</Link></li>
+              <li><Link to="/services" className="hover:text-white transition-colors">Reputation Management</Link></li>
+              <li><Link to="/services" className="hover:text-white transition-colors">Local SEO</Link></li>
+              <li><Link to="/services" className="hover:text-white transition-colors">Lead Reactivation</Link></li>
+              <li><Link to="/services" className="hover:text-white transition-colors">Email & SMS Campaigns</Link></li>
+              <li><Link to="/services" className="hover:text-white transition-colors">Social Media Planner</Link></li>
+              <li><Link to="/services" className="hover:text-white transition-colors">Invoicing & Payments</Link></li>
+              <li><Link to="/services" className="hover:text-white transition-colors">Documents & Contracts</Link></li>
+              <li><Link to="/services" className="hover:text-white transition-colors">Missed Call Text Back</Link></li>
+              <li><Link to="/services" className="hover:text-white transition-colors">Workflow Automations</Link></li>
+              <li><Link to="/services" className="hover:text-white transition-colors">Custom Automation</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold text-lg mb-6">Company</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
-              <li><a href="#hero" className="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#how-it-works" className="hover:text-white transition-colors">Process</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+              <li><Link to="/" className="hover:text-white transition-colors">About Us</Link></li>
+              <li><Link to="/" className="hover:text-white transition-colors">Process</Link></li>
+              <li><Link to="/get-started" className="hover:text-white transition-colors">Contact</Link></li>
               <li><a href="https://app.airevlabs.com" className="hover:text-white transition-colors">Login</a></li>
             </ul>
           </div>
@@ -65,9 +66,17 @@ export const Footer: React.FC = () => {
                 <Icons.Linkedin className="w-5 h-5" />
               </a>
             </div>
-            <p className="text-gray-500 text-xs">
-              Kalamazoo, Michigan
-            </p>
+            
+            <div className="space-y-3">
+              <div className="flex items-center text-gray-400 text-sm hover:text-white transition-colors">
+                <Icons.MapPin className="w-4 h-4 mr-2" />
+                <a href="https://maps.google.com/?q=Kalamazoo,MI" target="_blank" rel="noopener noreferrer">Kalamazoo, Michigan</a>
+              </div>
+              <div className="flex items-center text-gray-400 text-sm hover:text-white transition-colors">
+                <Icons.Phone className="w-4 h-4 mr-2" />
+                <a href="tel:2693994990">(269) 399-4990</a>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -76,8 +85,8 @@ export const Footer: React.FC = () => {
             &copy; {new Date().getFullYear()} AI Rev Labs. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm text-gray-600">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="https://booking.airevlabs.com/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="https://booking.airevlabs.com/terms" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>

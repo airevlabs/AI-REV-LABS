@@ -7,7 +7,7 @@ export const SpotlightSection: React.FC = () => {
 
   const spotlights = [
     {
-      title: "AI Voice Agents",
+      title: "AI Phone Receptionist",
       subtitle: "Never Miss a Call Again",
       description: "Our AI Voice Agents sound indistinguishable from humans and can handle multiple calls simultaneously. They book appointments directly into your calendar, answer FAQs, and qualify leads before they ever reach your team.",
       features: ["24/7 Availability", "Natural Language Processing", "Direct CRM Integration", "Instant Appointment Booking"],

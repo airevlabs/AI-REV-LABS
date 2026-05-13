@@ -8,7 +8,7 @@ export const ServicesSection: React.FC = () => {
     {
       id: 'website',
       title: 'Smart Website Builds',
-      description: 'High-converting designs with integrated booking, payments, and automated CRM connections built-in. Optimized for both traditional SEO and AI Search Optimization.',
+      description: 'Websites, Landing Pages, or Funnels with integrated booking, payments, and automated CRM connections built-in. Optimized for both traditional SEO and AI Search Optimization.',
       iconName: 'Globe'
     },
     {
@@ -25,14 +25,14 @@ export const ServicesSection: React.FC = () => {
     },
     {
       id: 'voice-ai',
-      title: 'AI Virtual Assistant',
+      title: 'AI Phone Receptionist',
       description: 'Intelligent AI Voice Agent that books appointments, qualifies leads, and answers questions 24/7.',
       iconName: 'Phone'
     },
     {
       id: 'digital-ai',
       title: 'AI Chatbot',
-      description: 'Instant responses across your website, SMS, and social media to capture engagement instantly.',
+      description: 'Instant responses across your website, SMS, email, and social media to capture engagement instantly.',
       iconName: 'MessageSquare'
     },
     {
@@ -44,7 +44,7 @@ export const ServicesSection: React.FC = () => {
     {
       id: 'local-seo',
       title: 'Local SEO',
-      description: 'Dominate local search with Google Business Profile optimization and syncing across 75+ authoritative directories.',
+      description: 'Dominate local search with Google Business Profile optimization and syncing across 40+ authoritative directories.',
       iconName: 'MapPin'
     },
     {

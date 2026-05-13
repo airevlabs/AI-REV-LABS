@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { Icons } from './Icons';
 
 export const Navbar: React.FC = () => {
@@ -18,12 +19,30 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const scrollToSection = (id: string) => {
     setIsOpen(false);
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
+  };
+
+  const handleGetStarted = () => {
+    setIsOpen(false);
+    navigate('/get-started');
   };
 
   return (
@@ -34,7 +53,7 @@ export const Navbar: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <div className="flex items-center cursor-pointer group" onClick={() => scrollToSection('hero')}>
+          <div className="flex items-center cursor-pointer group" onClick={() => { if(location.pathname !== '/') navigate('/'); else scrollToSection('hero'); }}>
              {/* Unified Logo Container: Responsive Sizing */}
              <div className="bg-black text-white flex items-center px-3 py-2 md:px-5 md:py-2.5 rounded-lg shadow-md transition-transform group-hover:scale-105">
                 <div className="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center overflow-hidden">
@@ -60,7 +79,7 @@ export const Navbar: React.FC = () => {
               Pricing
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
             </button>
-             <button onClick={() => scrollToSection('contact')} className="bg-black text-white px-6 py-2 rounded-full font-medium hover:bg-gray-800 transition-all hover:scale-105 active:scale-95">
+             <button onClick={handleGetStarted} className="bg-black text-white px-6 py-2 rounded-full font-medium hover:bg-gray-800 transition-all hover:scale-105 active:scale-95">
               Get Started
             </button>
           </div>
@@ -84,7 +103,7 @@ export const Navbar: React.FC = () => {
            <button onClick={() => scrollToSection('services')} className="block w-full py-3 text-center text-gray-800 hover:bg-gray-50 font-medium">Services</button>
            <button onClick={() => scrollToSection('how-it-works')} className="block w-full py-3 text-center text-gray-800 hover:bg-gray-50 font-medium">How it Works</button>
            <button onClick={() => scrollToSection('pricing')} className="block w-full py-3 text-center text-gray-800 hover:bg-gray-50 font-medium">Pricing</button>
-           <button onClick={() => scrollToSection('contact')} className="block w-full py-3 text-center text-black font-bold bg-gray-50 mt-2">Get Started</button>
+           <button onClick={handleGetStarted} className="block w-full py-3 text-center text-black font-bold bg-gray-50 mt-2">Get Started</button>
         </div>
       </div>
     </nav>
