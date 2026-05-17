@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  color: #000000;
+  overflow-x: hidden;
+  /* Improved readability for Inter */
+  font-feature-settings: "cv02", "cv05", "cv11";
+}
+/* Custom scrollbar for modern feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Minimalist Dot Grid Pattern */
+.bg-dot-pattern {
+  background-color: #ffffff;
+  background-image: radial-gradient(circle, #e5e5e5 1px, transparent 1px);
+  background-size: 30px 30px;
+}

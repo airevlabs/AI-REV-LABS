@@ -23,9 +23,9 @@ export default defineConfig(({ mode }) => {
         cssCodeSplit: false,
         rollupOptions: {
           output: {
-            entryFileNames: `assets/index.js`,
-            chunkFileNames: `assets/index.js`,
-            assetFileNames: `assets/[name].[ext]`
+            entryFileNames: `assets/[name]-[hash].js`,
+            chunkFileNames: `assets/[name]-[hash].js`,
+            assetFileNames: `assets/[name]-[hash].[ext]`
           }
         }
       }
