@@ -12,6 +12,19 @@ body {
   /* Improved readability for Inter */
   font-feature-settings: "cv02", "cv05", "cv11";
 }
+
+/* Fix for GoHighLevel mobile container padding */
+.hl_page-creator--content .container,
+.hl_page-creator--content .row,
+.hl_page-creator--content .col,
+.c-wrapper,
+.hl_page-creator--section,
+.hl_page-creator--row,
+.hl_page-creator--column {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  max-width: 100% !important;
+}
 /* Custom scrollbar for modern feel */
 ::-webkit-scrollbar {
   width: 8px;
