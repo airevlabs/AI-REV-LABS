@@ -4,6 +4,7 @@ import { Layout } from './components/Layout';
 import { Home } from './pages/Home';
 import { GetStarted } from './pages/GetStarted';
 import { ServicesPage } from './pages/ServicesPage';
+import { SmartWebsites } from './pages/SmartWebsites';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="get-started" element={<GetStarted />} />
           <Route path="services" element={<ServicesPage />} />
+          <Route path="services/smart-websites" element={<SmartWebsites />} />
         </Route>
       </Routes>
     </HashRouter>

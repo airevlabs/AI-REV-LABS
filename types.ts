@@ -4,6 +4,7 @@ export interface Service {
   title: string;
   description: string;
   iconName: string;
+  path?: string;
 }
 
 export interface Metric {

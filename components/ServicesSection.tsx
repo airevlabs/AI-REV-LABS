@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AnimationWrapper } from './AnimationWrapper';
 import { Icons } from './Icons';
 import { Service } from '../types';
@@ -9,7 +10,8 @@ export const ServicesSection: React.FC = () => {
       id: 'website',
       title: 'Smart Website Builds',
       description: 'Websites, Landing Pages, or Funnels with integrated booking, payments, and automated CRM connections built-in. Optimized for both traditional SEO and AI Search Optimization.',
-      iconName: 'Globe'
+      iconName: 'Globe',
+      path: '/services/smart-websites'
     },
     {
       id: 'booking',
@@ -119,6 +121,8 @@ export const ServicesSection: React.FC = () => {
     }
   };
 
+  const navigate = useNavigate();
+
   return (
     <section id="services" className="py-24 bg-dot-pattern relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -135,7 +139,14 @@ export const ServicesSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <AnimationWrapper key={service.id} delay={index * 100} type="slide">
-              <div className="group h-full p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer relative overflow-hidden">
+              <div 
+                onClick={() => {
+                  if (service.path) {
+                    navigate(service.path);
+                  }
+                }}
+                className="group h-full p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer relative overflow-hidden"
+              >
                 <div className="absolute top-0 left-0 w-1 h-full bg-black transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top"></div>
                 
                 <div className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-black group-hover:text-white transition-colors duration-300">
