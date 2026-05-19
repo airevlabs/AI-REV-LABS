@@ -24,7 +24,8 @@ export const ServicesSection: React.FC = () => {
       id: 'crm',
       title: 'CRM',
       description: 'Keep all your contacts, deals, notes, and follow-ups organized in one place so nothing gets missed.',
-      iconName: 'Users'
+      iconName: 'Users',
+      path: '/services/crm'
     },
     {
       id: 'voice-ai',

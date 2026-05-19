@@ -6,6 +6,7 @@ import { GetStarted } from './pages/GetStarted';
 import { ServicesPage } from './pages/ServicesPage';
 import { SmartWebsites } from './pages/SmartWebsites';
 import { BookingCalendar } from './pages/BookingCalendar';
+import { CRMPage } from './pages/CRMPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="services" element={<ServicesPage />} />
           <Route path="services/smart-websites" element={<SmartWebsites />} />
           <Route path="services/booking-calendar" element={<BookingCalendar />} />
+          <Route path="services/crm" element={<CRMPage />} />
         </Route>
       </Routes>
     </HashRouter>
