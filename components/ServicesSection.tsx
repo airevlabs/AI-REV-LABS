@@ -17,7 +17,8 @@ export const ServicesSection: React.FC = () => {
       id: 'booking',
       title: 'Booking Calendar',
       description: 'Customers can book appointments for services, online meetings, or events with automated reminders and other features.',
-      iconName: 'Calendar'
+      iconName: 'Calendar',
+      path: '/services/booking-calendar'
     },
     {
       id: 'crm',
