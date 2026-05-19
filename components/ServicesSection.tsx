@@ -31,7 +31,8 @@ export const ServicesSection: React.FC = () => {
       id: 'voice-ai',
       title: 'AI Phone Receptionist',
       description: 'Intelligent AI Voice Agent that books appointments, qualifies leads, and answers questions 24/7.',
-      iconName: 'Phone'
+      iconName: 'Phone',
+      path: '/services/ai-phone-receptionist'
     },
     {
       id: 'digital-ai',
