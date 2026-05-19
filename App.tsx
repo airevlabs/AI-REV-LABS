@@ -8,6 +8,7 @@ import { SmartWebsites } from './pages/SmartWebsites';
 import { BookingCalendar } from './pages/BookingCalendar';
 import { CRMPage } from './pages/CRMPage';
 import { AIPhoneReceptionist } from './pages/AIPhoneReceptionist';
+import { AIChatbot } from './pages/AIChatbot';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="services/booking-calendar" element={<BookingCalendar />} />
           <Route path="services/crm" element={<CRMPage />} />
           <Route path="services/ai-phone-receptionist" element={<AIPhoneReceptionist />} />
+          <Route path="services/ai-chatbot" element={<AIChatbot />} />
         </Route>
       </Routes>
     </HashRouter>

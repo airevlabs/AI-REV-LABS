@@ -38,7 +38,8 @@ export const ServicesSection: React.FC = () => {
       id: 'digital-ai',
       title: 'AI Chatbot',
       description: 'Instant responses across your website, SMS, email, and social media to capture engagement instantly.',
-      iconName: 'MessageSquare'
+      iconName: 'MessageSquare',
+      path: '/services/ai-chatbot'
     },
     {
       id: 'reputation',
