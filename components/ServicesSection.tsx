@@ -45,7 +45,8 @@ export const ServicesSection: React.FC = () => {
       id: 'reputation',
       title: 'Reputation Management',
       description: 'Automate review requests, mitigate negative feedback, and increase 4 to 5 star reviews to boost your online reputation.',
-      iconName: 'TrendingUp'
+      iconName: 'TrendingUp',
+      path: '/services/reputation-management'
     },
     {
       id: 'local-seo',
