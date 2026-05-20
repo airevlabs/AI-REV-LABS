@@ -66,7 +66,8 @@ export const ServicesSection: React.FC = () => {
       id: 'email-sms',
       title: 'Email & SMS Campaigns',
       description: 'Reach leads instantly with targeted email and text campaigns that can be scheduled, personalized, and tracked from one place.',
-      iconName: 'Mail'
+      iconName: 'Mail',
+      path: '/services/email-sms'
     },
     {
       id: 'social-media',

@@ -12,6 +12,7 @@ import { AIChatbot } from './pages/AIChatbot';
 import { ReputationManagement } from './pages/ReputationManagement';
 import { LocalSEO } from './pages/LocalSEO';
 import { LeadReactivation } from './pages/LeadReactivation';
+import { EmailSMS } from './pages/EmailSMS';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="services/reputation-management" element={<ReputationManagement />} />
           <Route path="services/local-seo" element={<LocalSEO />} />
           <Route path="services/lead-reactivation" element={<LeadReactivation />} />
+          <Route path="services/email-sms" element={<EmailSMS />} />
         </Route>
       </Routes>
     </HashRouter>
