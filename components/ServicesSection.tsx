@@ -59,7 +59,8 @@ export const ServicesSection: React.FC = () => {
       id: 'reactivation',
       title: 'Lead Reactivation',
       description: 'Wake up your "dead" leads. We launch campaigns to re-engage cold leads and past customers to drive immediate revenue.',
-      iconName: 'Database'
+      iconName: 'Database',
+      path: '/services/lead-reactivation'
     },
     {
       id: 'email-sms',

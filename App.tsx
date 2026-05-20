@@ -11,6 +11,7 @@ import { AIPhoneReceptionist } from './pages/AIPhoneReceptionist';
 import { AIChatbot } from './pages/AIChatbot';
 import { ReputationManagement } from './pages/ReputationManagement';
 import { LocalSEO } from './pages/LocalSEO';
+import { LeadReactivation } from './pages/LeadReactivation';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="services/ai-chatbot" element={<AIChatbot />} />
           <Route path="services/reputation-management" element={<ReputationManagement />} />
           <Route path="services/local-seo" element={<LocalSEO />} />
+          <Route path="services/lead-reactivation" element={<LeadReactivation />} />
         </Route>
       </Routes>
     </HashRouter>
