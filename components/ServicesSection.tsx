@@ -52,7 +52,8 @@ export const ServicesSection: React.FC = () => {
       id: 'local-seo',
       title: 'Local SEO',
       description: 'Dominate local search with Google Business Profile optimization and syncing across 40+ authoritative directories.',
-      iconName: 'MapPin'
+      iconName: 'MapPin',
+      path: '/services/local-seo'
     },
     {
       id: 'reactivation',

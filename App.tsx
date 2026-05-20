@@ -10,6 +10,7 @@ import { CRMPage } from './pages/CRMPage';
 import { AIPhoneReceptionist } from './pages/AIPhoneReceptionist';
 import { AIChatbot } from './pages/AIChatbot';
 import { ReputationManagement } from './pages/ReputationManagement';
+import { LocalSEO } from './pages/LocalSEO';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="services/ai-phone-receptionist" element={<AIPhoneReceptionist />} />
           <Route path="services/ai-chatbot" element={<AIChatbot />} />
           <Route path="services/reputation-management" element={<ReputationManagement />} />
+          <Route path="services/local-seo" element={<LocalSEO />} />
         </Route>
       </Routes>
     </HashRouter>
