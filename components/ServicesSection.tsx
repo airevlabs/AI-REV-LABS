@@ -101,7 +101,8 @@ export const ServicesSection: React.FC = () => {
       id: 'workflow',
       title: 'Workflow Automations',
       description: 'Build smart sequences, triggers, and multi-step automations that run your business 24/7.',
-      iconName: 'Workflow'
+      iconName: 'Workflow',
+      path: '/services/workflow'
     },
     {
       id: 'custom',
