@@ -87,7 +87,8 @@ export const ServicesSection: React.FC = () => {
       id: 'documents',
       title: 'Documents & Contracts',
       description: 'Create, send, and manage documents and contracts digitally, with workflow-based delivery for faster approvals.',
-      iconName: 'FileText'
+      iconName: 'FileText',
+      path: '/services/documents'
     },
     {
       id: 'missed-call',

@@ -15,6 +15,7 @@ import { LeadReactivation } from './pages/LeadReactivation';
 import { EmailSMS } from './pages/EmailSMS';
 import { SocialMedia } from './pages/SocialMedia';
 import { Invoicing } from './pages/Invoicing';
+import { Documents } from './pages/Documents';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path="services/email-sms" element={<EmailSMS />} />
           <Route path="services/social-media" element={<SocialMedia />} />
           <Route path="services/invoicing" element={<Invoicing />} />
+          <Route path="services/documents" element={<Documents />} />
         </Route>
       </Routes>
     </HashRouter>
