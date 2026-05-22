@@ -80,7 +80,8 @@ export const ServicesSection: React.FC = () => {
       id: 'invoicing',
       title: 'Invoicing & Payments',
       description: 'Send invoices, estimates, and payment links, then automate reminders, follow-ups, and recurring billing to get paid faster. Connect major payment providers like Stripe, PayPal, Square, NMI, and Authorize.Net',
-      iconName: 'CreditCard'
+      iconName: 'CreditCard',
+      path: '/services/invoicing'
     },
     {
       id: 'documents',
