@@ -108,7 +108,8 @@ export const ServicesSection: React.FC = () => {
       id: 'custom',
       title: 'Custom Automation',
       description: 'Bespoke AI solutions tailored to your unique workflows and operational challenges.',
-      iconName: 'Settings'
+      iconName: 'Settings',
+      path: '/services/custom'
     }
   ];
 

@@ -18,6 +18,7 @@ import { Invoicing } from './pages/Invoicing';
 import { Documents } from './pages/Documents';
 import { MissedCallTextBack } from './pages/MissedCallTextBack';
 import { WorkflowAutomations } from './pages/WorkflowAutomations';
+import { CustomAutomations } from './pages/CustomAutomations';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route path="services/documents" element={<Documents />} />
           <Route path="services/missed-call" element={<MissedCallTextBack />} />
           <Route path="services/workflow" element={<WorkflowAutomations />} />
+          <Route path="services/custom" element={<CustomAutomations />} />
         </Route>
       </Routes>
     </HashRouter>
