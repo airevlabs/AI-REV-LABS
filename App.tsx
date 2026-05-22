@@ -16,6 +16,7 @@ import { EmailSMS } from './pages/EmailSMS';
 import { SocialMedia } from './pages/SocialMedia';
 import { Invoicing } from './pages/Invoicing';
 import { Documents } from './pages/Documents';
+import { MissedCallTextBack } from './pages/MissedCallTextBack';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="services/social-media" element={<SocialMedia />} />
           <Route path="services/invoicing" element={<Invoicing />} />
           <Route path="services/documents" element={<Documents />} />
+          <Route path="services/missed-call" element={<MissedCallTextBack />} />
         </Route>
       </Routes>
     </HashRouter>

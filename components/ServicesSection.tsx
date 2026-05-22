@@ -94,7 +94,8 @@ export const ServicesSection: React.FC = () => {
       id: 'missed-call',
       title: 'Missed Call Text Back',
       description: 'Automatically text missed callers right away so you can reconnect and capture more leads fast.',
-      iconName: 'PhoneMissed'
+      iconName: 'PhoneMissed',
+      path: '/services/missed-call'
     },
     {
       id: 'workflow',
