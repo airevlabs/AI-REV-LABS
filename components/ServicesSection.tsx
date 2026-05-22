@@ -73,7 +73,8 @@ export const ServicesSection: React.FC = () => {
       id: 'social-media',
       title: 'Social Media Planner',
       description: 'Plan, schedule, and publish content across multiple social platforms from a single dashboard.',
-      iconName: 'Share2'
+      iconName: 'Share2',
+      path: '/services/social-media'
     },
     {
       id: 'invoicing',

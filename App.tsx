@@ -13,6 +13,7 @@ import { ReputationManagement } from './pages/ReputationManagement';
 import { LocalSEO } from './pages/LocalSEO';
 import { LeadReactivation } from './pages/LeadReactivation';
 import { EmailSMS } from './pages/EmailSMS';
+import { SocialMedia } from './pages/SocialMedia';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="services/local-seo" element={<LocalSEO />} />
           <Route path="services/lead-reactivation" element={<LeadReactivation />} />
           <Route path="services/email-sms" element={<EmailSMS />} />
+          <Route path="services/social-media" element={<SocialMedia />} />
         </Route>
       </Routes>
     </HashRouter>
