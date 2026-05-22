@@ -29,12 +29,12 @@ export const WorkflowAutomations: React.FC = () => {
       { type: 'trigger', title: 'New Form Submission', desc: 'Prospect fills out smart website booking inquiry form.', icon: 'Globe' },
       { type: 'action', title: 'Create CRM Contact', desc: 'Natively ingestion as a Lead, auto-populate details & tag as "Warm Prospect".', icon: 'Users' },
       { type: 'action', title: 'Instant SMS & Email Handshake', desc: 'Dispatches personalized text follow-up in under 30 seconds.', icon: 'MessageSquare' },
-      { type: 'action', title: 'Team Slack Notification', desc: 'Alerts sales representatives automatically with detailed contact records.', icon: 'Zap' }
+      { type: 'action', title: 'Internal App Notification', desc: 'Alerts team member(s) instantly within our proprietary mobile or desktop application.', icon: 'Zap' }
     ],
     onboarding: [
       { type: 'trigger', title: 'Contract Signed Accept', desc: 'Client signs legally binding monthly professional service agreement.', icon: 'FileText' },
-      { type: 'action', title: 'Stripe Deposit Invoice', desc: 'Triggers instant down-payment checkout or card-on-file authorization.', icon: 'CreditCard' },
-      { type: 'action', title: 'Provision Folders', desc: 'Auto-generates Google Drive client folders & project tracking lists.', icon: 'Database' },
+      { type: 'action', title: 'Trigger Secure Invoice', desc: 'Dispatches down-payment checkout or schedules retainer authorization automatically.', icon: 'CreditCard' },
+      { type: 'action', title: 'Advance Opportunity Stage', desc: 'Automatically moves the contact card to the active onboarding pipeline stage to trigger task assignments.', icon: 'Workflow' },
       { type: 'action', title: 'Email Welcome Packet', desc: 'Sends onboarding check-in lists & secure strategy strategy questionnaire links.', icon: 'Mail' }
     ],
     review: [
@@ -191,9 +191,9 @@ export const WorkflowAutomations: React.FC = () => {
                     {[
                       'Sync database contacts dynamically in real-time across your billing, documents, and lists',
                       'Configure visual workflows with date-based waits, automated SMS, and email check-ins',
-                      'Route pipeline events instantly to staff on Slack or Discord with rich context variables',
+                      'Route pipeline events instantly to staff via our proprietary internal app notifications',
                       'Natively log every process state transition, ensuring complete audit records',
-                      'Build customized API webhooks to connect any external authority tools flawlessly',
+                      'Configure visual logic branches to nurture different lead profiles uniquely',
                     ].map((text, idx) => (
                       <li key={idx} className="flex items-start text-sm text-gray-900 font-medium">
                         <Icons.Check className="w-4 h-4 text-black mt-1 mr-3 flex-shrink-0" />
@@ -467,28 +467,28 @@ export const WorkflowAutomations: React.FC = () => {
               </div>
             </AnimationWrapper>
 
-            {/* Webhooks custom API */}
+            {/* Smart Conditional Logic */}
             <AnimationWrapper type="slide" delay={350}>
               <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 h-full">
                 <div className="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center mb-6 text-black border border-gray-100">
-                  <Icons.Settings className="w-6 h-6" />
+                  <Icons.Workflow className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Outbound Custom Webhooks</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Smart Conditional Logic</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  Need to send data to third-party tools outside our native platform? Create outbound webhooks natively to push payload details to custom API databases in real-time.
+                  Create intelligent, multi-layered branching paths inside a single workflow. Segment prospects based on their form answers, deal size, or tags, ensuring every lead receives a fully tailored journey.
                 </p>
               </div>
             </AnimationWrapper>
 
-            {/* Inbound webhook triggers */}
+            {/* Review booster campaigns */}
             <AnimationWrapper type="slide" delay={450}>
               <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 h-full">
                 <div className="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center mb-6 text-black border border-gray-100">
-                  <Icons.Database className="w-6 h-6" />
+                  <Icons.Star className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Inbound API Event Triggers</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Automated Review Booster</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  Kick off automated sequences using external data feeds. Listen for webhook signals from other databases to instantly trigger SMS alerts and advance client pipeline workflows.
+                  Prompt for positive reviews the millisecond a service milestone is marked done in the CRM. Natively direct satisfied clients to your public profile while filtering feedback internally.
                 </p>
               </div>
             </AnimationWrapper>
@@ -501,7 +501,7 @@ export const WorkflowAutomations: React.FC = () => {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Multi-Channel Staff Alerts</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  Keep your internal team flawlessly aligned. Send automated Discord/Slack direct pings, email briefings, or GHL task lists the millisecond a prospect demands human attention.
+                  Keep your internal team flawlessly aligned. Send automated notifications directly inside our proprietary app, trigger push alerts, or generate task lists the millisecond a prospect demands attention. Plus, connect Slack integrations if needed.
                 </p>
               </div>
             </AnimationWrapper>
