@@ -1,8 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Icons } from './Icons';
 
 export const Footer: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const scrollToSection = (id: string) => {
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <footer className="bg-black text-white pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,20 +45,20 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold text-lg mb-6">Services</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
-              <li><Link to="/services" className="hover:text-white transition-colors">Smart Website Builds</Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors">Booking Calendar</Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors">CRM</Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors">AI Phone Receptionist</Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors">AI Chatbot</Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors">Reputation Management</Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors">Local SEO</Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors">Lead Reactivation</Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors">Email & SMS Campaigns</Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors">Social Media Planner</Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors">Invoicing & Payments</Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors">Documents & Contracts</Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors">Missed Call Text Back</Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors">Workflow Automations</Link></li>
+              <li><Link to="/services/smart-websites" className="hover:text-white transition-colors">Smart Website Builds</Link></li>
+              <li><Link to="/services/booking-calendar" className="hover:text-white transition-colors">Booking Calendar</Link></li>
+              <li><Link to="/services/crm" className="hover:text-white transition-colors">CRM</Link></li>
+              <li><Link to="/services/ai-phone-receptionist" className="hover:text-white transition-colors">AI Phone Receptionist</Link></li>
+              <li><Link to="/services/ai-chatbot" className="hover:text-white transition-colors">AI Chatbot</Link></li>
+              <li><Link to="/services/reputation-management" className="hover:text-white transition-colors">Reputation Management</Link></li>
+              <li><Link to="/services/local-seo" className="hover:text-white transition-colors">Local SEO</Link></li>
+              <li><Link to="/services/lead-reactivation" className="hover:text-white transition-colors">Lead Reactivation</Link></li>
+              <li><Link to="/services/email-sms" className="hover:text-white transition-colors">Email & SMS Campaigns</Link></li>
+              <li><Link to="/services/social-media" className="hover:text-white transition-colors">Social Media Planner</Link></li>
+              <li><Link to="/services/invoicing" className="hover:text-white transition-colors">Invoicing & Payments</Link></li>
+              <li><Link to="/services/documents" className="hover:text-white transition-colors">Documents & Contracts</Link></li>
+              <li><Link to="/services/missed-call" className="hover:text-white transition-colors">Missed Call Text Back</Link></li>
+              <li><Link to="/services/workflow" className="hover:text-white transition-colors">Workflow Automations</Link></li>
               <li><Link to="/services/custom" className="hover:text-white transition-colors">Custom Automation</Link></li>
             </ul>
           </div>
@@ -47,7 +67,14 @@ export const Footer: React.FC = () => {
             <h4 className="font-bold text-lg mb-6">Company</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
               <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link to="/" className="hover:text-white transition-colors">Process</Link></li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('how-it-works')} 
+                  className="hover:text-white transition-colors text-left"
+                >
+                  Process
+                </button>
+              </li>
               <li><Link to="/get-started" className="hover:text-white transition-colors">Contact</Link></li>
               <li><a href="https://app.airevlabs.com" className="hover:text-white transition-colors">Login</a></li>
             </ul>
