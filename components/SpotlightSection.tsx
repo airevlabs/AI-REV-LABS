@@ -88,12 +88,12 @@ export const SpotlightSection: React.FC = () => {
 
           {/* Right Side: Visual */}
           <AnimationWrapper type="scale" delay={200} className="w-full mt-10 lg:mt-0">
-            <div className={`relative rounded-3xl overflow-hidden aspect-[4/3] md:aspect-square w-full max-w-full md:max-w-[500px] mx-auto ${spotlights[activeTab].imageBg} shadow-2xl transition-colors duration-500 border border-white/5`}>
+            <div className={`relative rounded-3xl overflow-hidden aspect-[4/5] sm:aspect-square w-full max-w-full md:max-w-[500px] mx-auto ${spotlights[activeTab].imageBg} shadow-2xl transition-colors duration-500 border border-white/5`}>
               <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
               
-              <div className="absolute inset-0 flex items-center justify-center p-6">
+              <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6">
                   {activeTab === 0 && (
-                    <div className="w-full max-w-[280px] md:max-w-[320px] bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 space-y-4 shadow-2xl relative overflow-hidden text-left transform hover:scale-[1.02] transition-transform duration-300">
+                    <div className="w-full max-w-[265px] sm:max-w-[320px] bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 space-y-3 sm:space-y-4 shadow-2xl relative overflow-hidden text-left transform hover:scale-[1.02] transition-transform duration-300 scale-[0.8] sm:scale-100">
                        {/* Header */}
                        <div className="flex items-center justify-between border-b border-white/5 pb-3">
                           <div className="flex items-center space-x-2">
@@ -164,7 +164,7 @@ export const SpotlightSection: React.FC = () => {
                     </div>
                   )}
                   {activeTab === 1 && (
-                    <div className="w-[92%] md:w-[88%] max-w-[440px] bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden text-left transform -rotate-1 hover:rotate-0 transition-transform duration-500 relative">
+                    <div className="w-[92%] md:w-[88%] max-w-[340px] sm:max-w-[440px] bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden text-left transform -rotate-1 hover:rotate-0 transition-transform duration-500 relative scale-[0.78] sm:scale-100">
                        {/* Browser Header */}
                        <div className="bg-slate-900 border-b border-white/5 px-3 py-2.5 flex items-center space-x-2">
                           <div className="flex space-x-1.5 flex-shrink-0">
@@ -240,7 +240,7 @@ export const SpotlightSection: React.FC = () => {
                     </div>
                   )}
                   {activeTab === 2 && (
-                    <div className="w-full max-w-[280px] md:max-w-[320px] bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 space-y-4 shadow-2xl relative overflow-hidden text-left transform hover:scale-[1.02] transition-transform duration-300">
+                    <div className="w-full max-w-[265px] sm:max-w-[320px] bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 space-y-3 sm:space-y-4 shadow-2xl relative overflow-hidden text-left transform hover:scale-[1.02] transition-transform duration-300 scale-[0.8] sm:scale-100">
                        {/* Header */}
                        <div className="flex items-center justify-between border-b border-white/5 pb-3">
                           <div className="flex items-center space-x-2">

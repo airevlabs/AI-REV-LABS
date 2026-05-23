@@ -20,6 +20,7 @@ import { Documents } from './pages/Documents';
 import { MissedCallTextBack } from './pages/MissedCallTextBack';
 import { WorkflowAutomations } from './pages/WorkflowAutomations';
 import { CustomAutomations } from './pages/CustomAutomations';
+import { FAQ } from './pages/FAQ';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
+          <Route path="faq" element={<FAQ />} />
           <Route path="get-started" element={<GetStarted />} />
           <Route path="services" element={<ServicesPage />} />
           <Route path="services/smart-websites" element={<SmartWebsites />} />

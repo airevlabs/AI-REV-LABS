@@ -75,8 +75,8 @@ export const Footer: React.FC = () => {
                   Process
                 </button>
               </li>
-              <li><Link to="/get-started" className="hover:text-white transition-colors">Contact</Link></li>
-              <li><a href="https://app.airevlabs.com" className="hover:text-white transition-colors">Login</a></li>
+              <li><Link to="/faq" className="hover:text-white transition-colors">FAQs</Link></li>
+              <li><a href="https://app.airevlabs.com" className="hover:text-white transition-colors">Customer Login</a></li>
             </ul>
           </div>
 
@@ -102,6 +102,10 @@ export const Footer: React.FC = () => {
               <div className="flex items-center text-gray-400 text-sm hover:text-white transition-colors">
                 <Icons.Phone className="w-4 h-4 mr-2" />
                 <a href="tel:2693994990">(269) 399-4990</a>
+              </div>
+              <div className="flex items-center text-gray-400 text-sm hover:text-white transition-colors">
+                <Icons.MessageSquare className="w-4 h-4 mr-2" />
+                <Link to="/get-started">Message Us</Link>
               </div>
             </div>
           </div>

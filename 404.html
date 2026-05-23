@@ -1,515 +1,459 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>System Error 404 | AI Rev Labs</title>
+<style>
+  /* ==========================================================================
+     AI Rev Labs - Premium Standalone 404 GoHighLevel Diagnostic CSS
+     ========================================================================== */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@600;700;800&display=swap');
+
+  #revlabs-404-root {
+    /* Fullscreen fixed viewport takeover to override GoHighLevel wrapper structures */
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: #09090b !important;
+    color: #ffffff !important;
+    z-index: 99999999 !important; /* Forces takeover over GHL headers/elements */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 2rem 1rem !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    box-sizing: border-box !important;
+  }
+
+  #revlabs-404-root * {
+    box-sizing: border-box !important;
+  }
+
+  /* Minimalist Dark Dot Grid Pattern */
+  #revlabs-404-root .bg-dot-pattern {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px) !important;
+    background-size: 30px 30px !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+  }
+
+  /* Futuristic glowing background radial overlays */
+  #revlabs-404-root .glow-overlay {
+    position: absolute !important;
+    width: 400px !important;
+    height: 400px !important;
+    border-radius: 50% !important;
+    background: radial-gradient(circle, rgba(34, 197, 94, 0.15) 0%, transparent 70%) !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+    transition: background 1.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  #revlabs-404-root .glow-overlay.meltdown {
+    background: radial-gradient(circle, rgba(239, 68, 68, 0.25) 0%, transparent 75%) !important;
+  }
+
+  /* Main Diagnostic container card */
+  #revlabs-404-root .diagnostic-card {
+    width: 100% !important;
+    max-width: 580px !important;
+    background: rgba(17, 17, 19, 0.75) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 20px !important;
+    padding: 2.5rem !important;
+    position: relative !important;
+    z-index: 10 !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+    text-align: center !important;
+    overflow: hidden !important;
+    transition: border-color 0.8s ease, box-shadow 0.8s ease !important;
+  }
+
+  #revlabs-404-root .diagnostic-card::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 2px !important;
+    background: linear-gradient(90deg, transparent, #22c55e, transparent) !important;
+    z-index: 11 !important;
+    transition: background 0.8s ease !important;
+  }
+
+  #revlabs-404-root .diagnostic-card.meltdown {
+    border-color: rgba(239, 68, 68, 0.25) !important;
+    box-shadow: 0 25px 60px -10px rgba(239, 68, 68, 0.15) !important;
+  }
+
+  #revlabs-404-root .diagnostic-card.meltdown::before {
+    background: linear-gradient(90deg, transparent, #ef4444, transparent) !important;
+  }
+
+  /* Diagnostics Scan Line */
+  #revlabs-404-root .scan-line {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 2px !important;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.05), transparent) !important;
+    animation: rev-scan 4s linear infinite !important;
+    z-index: 12 !important;
+    pointer-events: none !important;
+  }
+
+  @keyframes rev-scan {
+    0% { top: 0%; }
+    100% { top: 100%; }
+  }
+
+  /* Glowing Diagnostic Badge */
+  #revlabs-404-root .status-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 100px !important;
+    padding: 0.5rem 1rem !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.75rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    margin-bottom: 2rem !important;
+    transition: all 0.5s ease !important;
+    color: #22c55e !important;
+  }
+
+  #revlabs-404-root .status-badge .dot {
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: 50% !important;
+    background-color: #22c55e !important;
+    box-shadow: 0 0 10px #22c55e !important;
+    animation: rev-pulse-dot 1.5s infinite !important;
+  }
+
+  #revlabs-404-root .status-badge.meltdown {
+    color: #ef4444 !important;
+    background: rgba(239, 68, 68, 0.05) !important;
+    border-color: rgba(239, 68, 68, 0.2) !important;
+  }
+
+  #revlabs-404-root .status-badge.meltdown .dot {
+    background-color: #ef4444 !important;
+    box-shadow: 0 0 12px #ef4444 !important;
+  }
+
+  @keyframes rev-pulse-dot {
+    0%, 100% { opacity: 0.5; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.15); }
+  }
+
+  /* Outer Wrapper for Scaled Gear & Canvas Overlay */
+  #revlabs-404-root .gear-section {
+    width: 160px !important;
+    height: 160px !important;
+    margin: 0 auto 2.5rem !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  #revlabs-404-root .canvas-overlay {
+    position: absolute !important;
+    top: -40px !important;
+    left: -40px !important;
+    width: 240px !important;
+    height: 240px !important;
+    z-index: 15 !important;
+    pointer-events: none !important;
+  }
+
+  /* Gear Outer Container (which spins) */
+  #revlabs-404-root .gear-container {
+    width: 120px !important;
+    height: 120px !important;
+    position: relative !important;
+    animation: rev-spin-normal 6s linear infinite !important;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  @keyframes rev-spin-normal {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* Individual Gear Pieces cut using Clip Path */
+  #revlabs-404-root .gear-piece {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    color: #ffffff !important;
+    transition: filter 0.8s ease !important;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.2)) !important;
+  }
+
+  /* Unified Path for SVG Gear */
+  #revlabs-404-root .gear-svg {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    fill: currentColor !important;
+  }
+
+  #revlabs-404-root .piece-tl { clip-path: polygon(0 0, 50% 0, 50% 50%, 0 50%) !important; }
+  #revlabs-404-root .piece-tr { clip-path: polygon(50% 0, 100% 0, 100% 50%, 50% 50%) !important; }
+  #revlabs-404-root .piece-bl { clip-path: polygon(0 50%, 50% 50%, 50% 100%, 0 100%) !important; }
+  #revlabs-404-root .piece-br { clip-path: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%) !important; }
   
-  <!-- Preconnect and import premium fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
-  
-  <style>
-    /* ==========================================================================
-       AI Rev Labs - Premium Standalone 404 Diagnostic CSS
-       ========================================================================== */
-    :root {
-      --bg-dark: #09090b;
-      --card-bg: rgba(17, 17, 19, 0.75);
-      --border-color: rgba(255, 255, 255, 0.08);
-      --text-primary: #ffffff;
-      --text-secondary: #a1a1aa;
-      --accent-green: #22c55e;
-      --accent-red: #ef4444;
-      --accent-glow-green: rgba(34, 197, 94, 0.15);
-      --accent-glow-red: rgba(239, 68, 68, 0.25);
-      --primary-font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      --heading-font: 'Outfit', sans-serif;
-      --mono-font: 'JetBrains Mono', monospace;
+  #revlabs-404-root .piece-center {
+    clip-path: circle(22% at 50% 50%) !important;
+    z-index: 10 !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  /* CORE MELTDOWN SHATTER STATE */
+  #revlabs-404-root .gear-container.meltdown {
+    animation-play-state: paused !important;
+  }
+
+  #revlabs-404-root .gear-container.meltdown .gear-piece {
+    animation-fill-mode: forwards !important;
+    animation-duration: 1.5s !important;
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    color: #ef4444 !important;
+    filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.6)) !important;
+  }
+
+  #revlabs-404-root .gear-container.meltdown .piece-tl { animation-name: rev-explode-tl !important; }
+  #revlabs-404-root .gear-container.meltdown .piece-tr { animation-name: rev-explode-tr !important; }
+  #revlabs-404-root .gear-container.meltdown .piece-bl { animation-name: rev-explode-bl !important; }
+  #revlabs-404-root .gear-container.meltdown .piece-br { animation-name: rev-explode-br !important; }
+  #revlabs-404-root .gear-container.meltdown .piece-center {
+    animation-name: rev-implode-center !important;
+    animation-duration: 0.8s !important;
+  }
+
+  @keyframes rev-explode-tl {
+    0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+    20% { transform: translate(-18px, -24px) rotate(-15deg); opacity: 1; }
+    100% { transform: translate(-28px, 12px) rotate(-35deg); opacity: 0.95; }
+  }
+  @keyframes rev-explode-tr {
+    0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+    20% { transform: translate(24px, -18px) rotate(20deg); opacity: 1; }
+    100% { transform: translate(34px, 10px) rotate(42deg); opacity: 0.95; }
+  }
+  @keyframes rev-explode-bl {
+    0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+    20% { transform: translate(-22px, 12px) rotate(12deg); opacity: 1; }
+    100% { transform: translate(-32px, 32px) rotate(18deg); opacity: 0.95; }
+  }
+  @keyframes rev-explode-br {
+    0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+    20% { transform: translate(18px, 18px) rotate(-18deg); opacity: 1; }
+    100% { transform: translate(28px, 28px) rotate(-38deg); opacity: 0.95; }
+  }
+  @keyframes rev-implode-center {
+    0% { transform: scale(1) translate(0, 0); opacity: 1; }
+    30% { transform: scale(1.1) translate(2px, -3px); opacity: 1; }
+    100% { transform: scale(0.9) translate(4px, 18px) rotate(8deg); opacity: 0.7; }
+  }
+
+  /* Console Diagnostics Log Box */
+  #revlabs-404-root .console-log {
+    font-family: 'JetBrains Mono', monospace !important;
+    background: rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.04) !important;
+    border-radius: 8px !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 0.72rem !important;
+    color: #71717a !important;
+    text-align: left !important;
+    height: 72px !important;
+    overflow-y: hidden !important;
+    margin-bottom: 2rem !important;
+    line-height: 1.5 !important;
+  }
+
+  #revlabs-404-root .console-log-line {
+    display: block !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    opacity: 0;
+    transform: translateY(4px);
+    animation: rev-console-fade-in 0.4s forwards !important;
+  }
+
+  #revlabs-404-root .console-log-line.success { color: #22c55e !important; }
+  #revlabs-404-root .console-log-line.error { color: #ef4444 !important; }
+  #revlabs-404-root .console-log-line.warning { color: #f59e0b !important; }
+
+  @keyframes rev-console-fade-in {
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Text layouts */
+  #revlabs-404-root .title-404 {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 3.5rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.04em !important;
+    line-height: 1.1 !important;
+    margin-bottom: 0.5rem !important;
+    background: linear-gradient(135deg, #ffffff 30%, #a1a1aa 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    transition: background 0.8s ease !important;
+  }
+
+  #revlabs-404-root .title-404.meltdown {
+    background: linear-gradient(135deg, #ffffff 40%, #ef4444 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+  }
+
+  #revlabs-404-root .subtitle-404 {
+    font-size: 1.125rem !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+    margin-bottom: 1rem !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  #revlabs-404-root .desc-404 {
+    color: #a1a1aa !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    max-width: 440px !important;
+    margin: 0 auto 2.5rem !important;
+    height: 4.8em !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Actions Layout */
+  #revlabs-404-root .actions-panel {
+    opacity: 0 !important;
+    transform: translateY(15px) !important;
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+    pointer-events: none !important;
+  }
+
+  #revlabs-404-root .actions-panel.active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    pointer-events: all !important;
+  }
+
+  #revlabs-404-root .btn-back {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    background: #ffffff !important;
+    color: #09090b !important;
+    text-decoration: none !important;
+    padding: 0.85rem 2rem !important;
+    border-radius: 100px !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    letter-spacing: -0.01em !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid transparent !important;
+    cursor: pointer !important;
+  }
+
+  #revlabs-404-root .btn-back:hover {
+    transform: scale(1.03) !important;
+    box-shadow: 0 6px 25px rgba(255, 255, 255, 0.25) !important;
+    background: #ffffff !important;
+  }
+
+  #revlabs-404-root .btn-back:active {
+    transform: scale(0.97) !important;
+  }
+
+  #revlabs-404-root .btn-back svg {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  #revlabs-404-root .btn-back:hover svg {
+    transform: translateX(4px) !important;
+  }
+
+  /* Countdown Ring */
+  #revlabs-404-root .redirect-timer {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    font-size: 0.82rem !important;
+    color: #a1a1aa !important;
+    font-family: 'JetBrains Mono', monospace !important;
+  }
+
+  #revlabs-404-root .countdown-ring {
+    width: 24px !important;
+    height: 24px !important;
+    transform: rotate(-90deg) !important;
+  }
+
+  #revlabs-404-root .countdown-ring-circle {
+    fill: transparent !important;
+    stroke: rgba(255, 255, 255, 0.1) !important;
+    stroke-width: 3.5 !important;
+  }
+
+  #revlabs-404-root .countdown-ring-progress {
+    fill: transparent !important;
+    stroke: #ef4444 !important;
+    stroke-width: 3.5 !important;
+    stroke-linecap: round !important;
+    stroke-dasharray: 63 !important;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.1s linear !important;
+  }
+
+  #revlabs-404-root .countdown-sec {
+    font-weight: bold !important;
+    color: #ffffff !important;
+  }
+
+  @media (max-width: 580px) {
+    #revlabs-404-root .diagnostic-card {
+      padding: 2rem 1.5rem !important;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    #revlabs-404-root .title-404 {
+      font-size: 2.75rem !important;
     }
-
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-primary);
-      font-family: var(--primary-font);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem 1rem;
-      overflow-x: hidden;
-      position: relative;
+    #revlabs-404-root .desc-404 {
+      font-size: 0.88rem !important;
+      height: 5.5em !important;
     }
+  }
+</style>
 
-    /* Minimalist Dark Dot Grid Pattern */
-    .bg-dot-pattern {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-      background-size: 30px 30px;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    /* Futuristic glowing background radial overlays */
-    .glow-overlay {
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      background: radial-gradient(circle, var(--accent-glow-green) 0%, transparent 70%);
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 2;
-      pointer-events: none;
-      transition: background 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .glow-overlay.meltdown {
-      background: radial-gradient(circle, var(--accent-glow-red) 0%, transparent 75%);
-    }
-
-    /* Main Diagnostic container card */
-    .diagnostic-card {
-      width: 100%;
-      max-width: 580px;
-      background: var(--card-bg);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid var(--border-color);
-      border-radius: 20px;
-      padding: 2.5rem;
-      position: relative;
-      z-index: 10;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-      text-align: center;
-      overflow: hidden;
-      transition: border-color 0.8s ease, box-shadow 0.8s ease;
-    }
-
-    .diagnostic-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--accent-green), transparent);
-      z-index: 11;
-      transition: background 0.8s ease;
-    }
-
-    .diagnostic-card.meltdown {
-      border-color: rgba(239, 68, 68, 0.25);
-      box-shadow: 0 25px 60px -10px rgba(239, 68, 68, 0.15);
-    }
-
-    .diagnostic-card.meltdown::before {
-      background: linear-gradient(90deg, transparent, var(--accent-red), transparent);
-    }
-
-    /* Diagnostics Scan Line */
-    .scan-line {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.05), transparent);
-      animation: scan 4s linear infinite;
-      z-index: 12;
-      pointer-events: none;
-    }
-
-    @keyframes scan {
-      0% { top: 0%; }
-      100% { top: 100%; }
-    }
-
-    /* Glowing Diagnostic Badge */
-    .status-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-color);
-      border-radius: 100px;
-      padding: 0.5rem 1rem;
-      font-family: var(--mono-font);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 2rem;
-      transition: all 0.5s ease;
-      color: var(--accent-green);
-    }
-
-    .status-badge .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background-color: var(--accent-green);
-      box-shadow: 0 0 10px var(--accent-green);
-      animation: pulse-dot 1.5s infinite;
-    }
-
-    .status-badge.meltdown {
-      color: var(--accent-red);
-      background: rgba(239, 68, 68, 0.05);
-      border-color: rgba(239, 68, 68, 0.2);
-    }
-
-    .status-badge.meltdown .dot {
-      background-color: var(--accent-red);
-      box-shadow: 0 0 12px var(--accent-red);
-    }
-
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 0.5; transform: scale(0.9); }
-      50% { opacity: 1; transform: scale(1.15); }
-    }
-
-    /* Outer Wrapper for Scaled Gear & Canvas Overlay */
-    .gear-section {
-      width: 160px;
-      height: 160px;
-      margin: 0 auto 2.5rem;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .canvas-overlay {
-      position: absolute;
-      top: -40px;
-      left: -40px;
-      width: 240px;
-      height: 240px;
-      z-index: 15;
-      pointer-events: none;
-    }
-
-    /* Gear Outer Container (which spins) */
-    .gear-container {
-      width: 120px;
-      height: 120px;
-      position: relative;
-      animation: spin-normal 6s linear infinite;
-      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    @keyframes spin-normal {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    /* Individual Gear Pieces cut using Clip Path */
-    .gear-piece {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      color: var(--text-primary);
-      transition: filter 0.8s ease;
-      filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.2));
-    }
-
-    /* Unified Path for SVG Gear (AI Rev Labs Main Logo gear) */
-    .gear-svg {
-      width: 100%;
-      height: 100%;
-      display: block;
-      fill: currentColor;
-    }
-
-    /* Top-Left Piece */
-    .piece-tl {
-      clip-path: polygon(0 0, 50% 0, 50% 50%, 0 50%);
-    }
-
-    /* Top-Right Piece */
-    .piece-tr {
-      clip-path: polygon(50% 0, 100% 0, 100% 50%, 50% 50%);
-    }
-
-    /* Bottom-Left Piece */
-    .piece-bl {
-      clip-path: polygon(0 50%, 50% 50%, 50% 100%, 0 100%);
-    }
-
-    /* Bottom-Right Piece */
-    .piece-br {
-      clip-path: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%);
-    }
-
-    /* Core Center Circle */
-    .piece-center {
-      clip-path: circle(22% at 50% 50%);
-      z-index: 10;
-      color: rgba(255, 255, 255, 0.9);
-    }
-
-    /* CORE MELTDOWN SHATTER STATE (Paused parent spin, triggers individual piece animations) */
-    .gear-container.meltdown {
-      animation-play-state: paused;
-    }
-
-    .gear-container.meltdown .gear-piece {
-      animation-fill-mode: forwards;
-      animation-duration: 1.5s;
-      animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      color: var(--accent-red);
-      filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.6));
-    }
-
-    .gear-container.meltdown .piece-tl {
-      animation-name: explode-tl;
-    }
-
-    .gear-container.meltdown .piece-tr {
-      animation-name: explode-tr;
-    }
-
-    .gear-container.meltdown .piece-bl {
-      animation-name: explode-bl;
-    }
-
-    .gear-container.meltdown .piece-br {
-      animation-name: explode-br;
-    }
-
-    .gear-container.meltdown .piece-center {
-      animation-name: implode-center;
-      animation-duration: 0.8s;
-    }
-
-    /* 3D Exploding Parabolic Trajectories for Gear Quadrants */
-    @keyframes explode-tl {
-      0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
-      20% { transform: translate(-30px, -45px) rotate(-60deg); opacity: 1; }
-      100% { transform: translate(-140px, 180px) rotate(-240deg); opacity: 0; }
-    }
-
-    @keyframes explode-tr {
-      0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
-      20% { transform: translate(45px, -35px) rotate(80deg); opacity: 1; }
-      100% { transform: translate(160px, 170px) rotate(290deg); opacity: 0; }
-    }
-
-    @keyframes explode-bl {
-      0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
-      20% { transform: translate(-45px, 20px) rotate(90deg); opacity: 1; }
-      100% { transform: translate(-170px, 220px) rotate(320deg); opacity: 0; }
-    }
-
-    @keyframes explode-br {
-      0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
-      20% { transform: translate(35px, 35px) rotate(-70deg); opacity: 1; }
-      100% { transform: translate(150px, 200px) rotate(-260deg); opacity: 0; }
-    }
-
-    @keyframes implode-center {
-      0% { transform: scale(1); opacity: 1; }
-      40% { transform: scale(1.3); opacity: 1; }
-      100% { transform: scale(0); opacity: 0; filter: blur(4px); }
-    }
-
-    /* Console Diagnostics Log Box */
-    .console-log {
-      font-family: var(--mono-font);
-      background: rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.04);
-      border-radius: 8px;
-      padding: 0.75rem 1rem;
-      font-size: 0.72rem;
-      color: #71717a;
-      text-align: left;
-      height: 72px;
-      overflow-y: hidden;
-      margin-bottom: 2rem;
-      line-height: 1.5;
-    }
-
-    .console-log-line {
-      display: block;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      opacity: 0;
-      transform: translateY(4px);
-      animation: console-fade-in 0.4s forwards;
-    }
-
-    .console-log-line.success { color: var(--accent-green); }
-    .console-log-line.error { color: var(--accent-red); }
-    .console-log-line.warning { color: #f59e0b; }
-
-    @keyframes console-fade-in {
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Core copy text layouts */
-    .title-404 {
-      font-family: var(--heading-font);
-      font-size: 3.5rem;
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1.1;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(135deg, #ffffff 30%, #a1a1aa 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      transition: background 0.8s ease;
-    }
-
-    .title-404.meltdown {
-      background: linear-gradient(135deg, #ffffff 40%, var(--accent-red) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .subtitle-404 {
-      font-size: 1.125rem;
-      font-weight: 500;
-      color: var(--text-primary);
-      margin-bottom: 1rem;
-      letter-spacing: -0.01em;
-    }
-
-    .desc-404 {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      line-height: 1.6;
-      max-width: 440px;
-      margin: 0 auto 2.5rem;
-      height: 4.8em; /* Reserve height for dynamic paragraph to avoid jumps */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Actions Layout (Countdown + Button) */
-    .actions-panel {
-      opacity: 0;
-      transform: translateY(15px);
-      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-      pointer-events: none;
-    }
-
-    .actions-panel.active {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: all;
-    }
-
-    /* Premium interactive back button */
-    .btn-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      background: var(--text-primary);
-      color: var(--bg-dark);
-      text-decoration: none;
-      padding: 0.85rem 2rem;
-      border-radius: 100px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      letter-spacing: -0.01em;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
-      border: 1px solid transparent;
-      cursor: pointer;
-    }
-
-    .btn-back:hover {
-      transform: scale(1.03);
-      box-shadow: 0 6px 25px rgba(255, 255, 255, 0.25);
-      background: #ffffff;
-    }
-
-    .btn-back:active {
-      transform: scale(0.97);
-    }
-
-    .btn-back svg {
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .btn-back:hover svg {
-      transform: translateX(4px);
-    }
-
-    /* Countdown SVG Wrapper */
-    .redirect-timer {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.82rem;
-      color: var(--text-secondary);
-      font-family: var(--mono-font);
-    }
-
-    .countdown-ring {
-      width: 24px;
-      height: 24px;
-      transform: rotate(-90deg);
-    }
-
-    .countdown-ring-circle {
-      fill: transparent;
-      stroke: rgba(255, 255, 255, 0.1);
-      stroke-width: 3.5;
-    }
-
-    .countdown-ring-progress {
-      fill: transparent;
-      stroke: var(--accent-red);
-      stroke-width: 3.5;
-      stroke-linecap: round;
-      stroke-dasharray: 63; /* 2 * PI * r (r = 10) */
-      stroke-dashoffset: 0;
-      transition: stroke-dashoffset 0.1s linear;
-    }
-
-    .countdown-sec {
-      font-weight: bold;
-      color: var(--text-primary);
-    }
-
-    /* Media query updates */
-    @media (max-width: 580px) {
-      .diagnostic-card {
-        padding: 2rem 1.5rem;
-      }
-      .title-404 {
-        font-size: 2.75rem;
-      }
-      .desc-404 {
-        font-size: 0.88rem;
-        height: 5.5em;
-      }
-    }
-  </style>
-</head>
-<body>
-
+<div id="revlabs-404-root">
   <!-- Background Dots Overlay -->
   <div class="bg-dot-pattern"></div>
   
@@ -587,7 +531,7 @@
     <div class="actions-panel" id="actionsArea">
       <!-- Return to base button -->
       <a href="https://airevlabs.com" class="btn-back">
-        <span>Return to Safety</span>
+        <span>Go Home</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <line x1="5" y1="12" x2="19" y2="12"></line>
           <polyline points="12 5 19 12 12 19"></polyline>
@@ -604,237 +548,236 @@
       </div>
     </div>
   </div>
+</div>
 
-  <script>
-    /* ==========================================================================
-       AI Rev Labs - 404 Interactive Script
-       ========================================================================== */
-    
-    // Funny AI Automation jokes pool
-    const JOKES = [
-      "Our AI bot optimized this page so aggressively that it automated it out of existence.",
-      "Error 404: The revenue-generation algorithm determined this URL was underperforming and archived it.",
-      "Oops! Our AI receptionist answered a call, got distracted, and dropped the database for this link.",
-      "This page has been fully automated and is currently living its best life on a beach, running SMS campaigns.",
-      "System overload! The AI engines spun so fast they shattered the local URL matrix."
-    ];
+<script>
+  /* ==========================================================================
+     AI Rev Labs - 404 Interactive Script
+     ========================================================================== */
+  
+  // Funny AI Automation jokes pool
+  const JOKES = [
+    "Our AI bot optimized this page so aggressively that it automated it out of existence.",
+    "Error 404: The revenue-generation algorithm determined this URL was underperforming and archived it.",
+    "Oops! Our AI receptionist answered a call, got distracted, and dropped the database for this link.",
+    "This page has been fully automated and is currently living its best life on a beach, running SMS campaigns.",
+    "System overload! The AI engines spun so fast they shattered the local URL matrix."
+  ];
 
-    // Pick a joke immediately so GHL pages load fast
-    const selectedJoke = JOKES[Math.floor(Math.random() * JOKES.length)];
+  // Pick a joke immediately so GHL pages load fast
+  const selectedJoke = JOKES[Math.floor(Math.random() * JOKES.length)];
 
-    // Elements
-    const gear = document.getElementById('gear');
-    const ambientGlow = document.getElementById('ambientGlow');
-    const cardContainer = document.getElementById('cardContainer');
-    const diagBadge = document.getElementById('diagBadge');
-    const badgeText = document.getElementById('badgeText');
-    const funnyMessage = document.getElementById('funnyMessage');
-    const titleHeader = document.getElementById('titleHeader');
-    const consoleBox = document.getElementById('consoleBox');
-    const actionsArea = document.getElementById('actionsArea');
-    const timerSeconds = document.getElementById('timerSeconds');
-    const countdownProgress = document.getElementById('countdownProgress');
-    const canvas = document.getElementById('sparkCanvas');
-    const ctx = canvas.getContext('2d');
+  // Elements
+  const gear = document.getElementById('gear');
+  const ambientGlow = document.getElementById('ambientGlow');
+  const cardContainer = document.getElementById('cardContainer');
+  const diagBadge = document.getElementById('diagBadge');
+  const badgeText = document.getElementById('badgeText');
+  const funnyMessage = document.getElementById('funnyMessage');
+  const titleHeader = document.getElementById('titleHeader');
+  const consoleBox = document.getElementById('consoleBox');
+  const actionsArea = document.getElementById('actionsArea');
+  const timerSeconds = document.getElementById('timerSeconds');
+  const countdownProgress = document.getElementById('countdownProgress');
+  const canvas = document.getElementById('sparkCanvas');
+  const ctx = canvas.getContext('2d');
 
-    // Canvas variables
-    let particles = [];
-    let animationFrameId = null;
+  // Canvas variables
+  let particles = [];
+  let animationFrameId = null;
 
-    // Timeline Logging Steps
-    const LOG_STEPS = [
-      { text: "[OK] Initializing diagnostics scan...", time: 100, type: "normal" },
-      { text: "[OK] Connecting to AI Automation Engines...", time: 500, type: "success" },
-      { text: "[OK] Resolving target URL matrix...", time: 900, type: "normal" },
-      { text: "[WARN] Thread overload: Spin frequency exceeded...", time: 1400, type: "warning" },
-      { text: "[CRITICAL] SYSTEM TEMPERATURE CRITICAL...", time: 1700, type: "error" },
-      { text: "[FATAL] CORE MELTDOWN - GEAR SHATTER DETECTED", time: 2000, type: "error" }
-    ];
+  // Timeline Logging Steps
+  const LOG_STEPS = [
+    { text: "[OK] Initializing diagnostics scan...", time: 100, type: "normal" },
+    { text: "[OK] Connecting to AI Automation Engines...", time: 500, type: "success" },
+    { text: "[OK] Resolving target URL matrix...", time: 900, type: "normal" },
+    { text: "[WARN] Thread overload: Spin frequency exceeded...", time: 1400, type: "warning" },
+    { text: "[CRITICAL] SYSTEM TEMPERATURE CRITICAL...", time: 1700, type: "error" },
+    { text: "[FATAL] CORE MELTDOWN - GEAR SHATTER DETECTED", time: 2000, type: "error" }
+  ];
 
-    // Start Console Logs
-    LOG_STEPS.forEach(step => {
-      setTimeout(() => {
-        const line = document.createElement('span');
-        line.className = `console-log-line ${step.type}`;
-        line.textContent = step.text;
-        consoleBox.appendChild(line);
-        consoleBox.scrollTop = consoleBox.scrollHeight;
-      }, step.time);
-    });
-
-    // Particle Class representing Sparks and Binary digits
-    class Particle {
-      constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        // Exploding polar coordinates
-        const angle = Math.random() * Math.PI * 2;
-        const velocity = 2 + Math.random() * 8;
-        this.vx = Math.cos(angle) * velocity;
-        this.vy = Math.sin(angle) * velocity - (Math.random() * 2); // Initial upward kick
-        this.gravity = 0.15;
-        this.alpha = 1;
-        this.decay = 0.015 + Math.random() * 0.02;
-        this.rotation = Math.random() * Math.PI;
-        this.rotationSpeed = (Math.random() - 0.5) * 0.2;
-        
-        // 40% chance of being a binary text digit, 60% glowing spark
-        this.isBinary = Math.random() < 0.45;
-        this.char = Math.random() < 0.5 ? '0' : '1';
-        this.size = this.isBinary ? 10 + Math.random() * 8 : 2 + Math.random() * 4;
-        
-        // Glowing ember color array
-        const colors = ['#ef4444', '#f59e0b', '#ffffff', '#dc2626'];
-        this.color = colors[Math.floor(Math.random() * colors.length)];
-      }
-
-      update() {
-        this.vy += this.gravity; // Gravity pull
-        this.x += this.vx;
-        this.y += this.vy;
-        this.alpha -= this.decay;
-        this.rotation += this.rotationSpeed;
-      }
-
-      draw() {
-        ctx.save();
-        ctx.globalAlpha = this.alpha;
-        ctx.translate(this.x, this.y);
-        
-        if (this.isBinary) {
-          ctx.rotate(this.rotation);
-          ctx.font = `bold ${this.size}px 'JetBrains Mono', monospace`;
-          ctx.fillStyle = '#ef4444';
-          ctx.fillText(this.char, 0, 0);
-        } else {
-          // Circular glowing spark
-          ctx.beginPath();
-          ctx.arc(0, 0, this.size, 0, Math.PI * 2);
-          ctx.fillStyle = this.color;
-          // Add glow highlight
-          ctx.shadowBlur = 8;
-          ctx.shadowColor = '#ef4444';
-          ctx.fill();
-        }
-        ctx.restore();
-      }
-    }
-
-    // Trigger Meltdown at precisely 2.0 seconds
+  // Start Console Logs
+  LOG_STEPS.forEach(step => {
     setTimeout(() => {
-      triggerCoreMeltdown();
-    }, 2000);
+      const line = document.createElement('span');
+      line.className = `console-log-line ${step.type}`;
+      line.textContent = step.text;
+      consoleBox.appendChild(line);
+      consoleBox.scrollTop = consoleBox.scrollHeight;
+    }, step.time);
+  });
 
-    function triggerCoreMeltdown() {
-      // 1. Update elements visually to Meltdown Alert
-      gear.classList.add('meltdown');
-      ambientGlow.classList.add('meltdown');
-      cardContainer.classList.add('meltdown');
-      diagBadge.classList.add('meltdown');
-      titleHeader.classList.add('meltdown');
-      badgeText.textContent = "Status: Core Meltdown";
-
-      // 2. Play subtle haptic scale bump on card
-      cardContainer.style.transform = "scale(0.99)";
-      setTimeout(() => { cardContainer.style.transform = "scale(1)"; }, 120);
-
-      // 3. Initiate Spark and Binary particles burst
-      initiateSparksBurst();
-
-      // 4. Reveal funny message with fade in
-      setTimeout(() => {
-        funnyMessage.style.opacity = 0;
-        setTimeout(() => {
-          funnyMessage.textContent = selectedJoke;
-          funnyMessage.style.opacity = 1;
-        }, 150);
-      }, 200);
-
-      // 5. Activate Action Buttons and Countdown AFTER shatter completes (1 second after meltdown starts)
-      setTimeout(() => {
-        activateCountdownSystem();
-      }, 1000);
-    }
-
-    // Canvas particle engine
-    function initiateSparksBurst() {
-      const centerX = canvas.width / 2;
-      const centerY = canvas.height / 2;
-
-      // Spawn initial burst of 45 particles
-      for (let i = 0; i < 45; i++) {
-        particles.push(new Particle(centerX, centerY));
-      }
-
-      function animLoop() {
-        // Clear canvas
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        // Update and draw particles
-        for (let i = particles.length - 1; i >= 0; i--) {
-          const p = particles[i];
-          p.update();
-          p.draw();
-
-          // Remove dead particles
-          if (p.alpha <= 0) {
-            particles.splice(i, 1);
-          }
-        }
-
-        // Add minor continuous exhaust smoke for first 500ms
-        if (particles.length > 0) {
-          animationFrameId = requestAnimationFrame(animLoop);
-        } else {
-          cancelAnimationFrame(animationFrameId);
-        }
-      }
-
-      animLoop();
-    }
-
-    // Interactive circular countdown system
-    function activateCountdownSystem() {
-      actionsArea.classList.add('active');
-
-      let secondsLeft = 15;
-      const totalOffset = 63; // 2 * PI * r (r = 10)
+  // Particle Class representing Sparks and Binary digits
+  class Particle {
+    constructor(x, y) {
+      this.x = x;
+      this.y = y;
+      // Exploding polar coordinates
+      const angle = Math.random() * Math.PI * 2;
+      const velocity = 2 + Math.random() * 8;
+      this.vx = Math.cos(angle) * velocity;
+      this.vy = Math.sin(angle) * velocity - (Math.random() * 2); // Initial upward kick
+      this.gravity = 0.15;
+      this.alpha = 1;
+      this.decay = 0.015 + Math.random() * 0.02;
+      this.rotation = Math.random() * Math.PI;
+      this.rotationSpeed = (Math.random() - 0.5) * 0.2;
       
-      timerSeconds.textContent = secondsLeft;
-      countdownProgress.style.strokeDashoffset = 0;
+      // 40% chance of being a binary text digit, 60% glowing spark
+      this.isBinary = Math.random() < 0.45;
+      this.char = Math.random() < 0.5 ? '0' : '1';
+      this.size = this.isBinary ? 10 + Math.random() * 8 : 2 + Math.random() * 4;
+      
+      // Glowing ember color array
+      const colors = ['#ef4444', '#f59e0b', '#ffffff', '#dc2626'];
+      this.color = colors[Math.floor(Math.random() * colors.length)];
+    }
 
-      // Smooth frame-based countdown animation loop
-      const duration = 15000; // 15 seconds
-      const startTime = performance.now();
+    update() {
+      this.vy += this.gravity; // Gravity pull
+      this.x += this.vx;
+      this.y += this.vy;
+      this.alpha -= this.decay;
+      this.rotation += this.rotationSpeed;
+    }
 
-      function updateTimer(now) {
-        const elapsed = now - startTime;
-        const remainingFraction = Math.max(0, 1 - (elapsed / duration));
-        
-        // Update SVG circle outline offset
-        countdownProgress.style.strokeDashoffset = totalOffset - (remainingFraction * totalOffset);
-        
-        // Calculate rounded seconds left
-        const currentSec = Math.ceil(remainingFraction * 15);
-        if (currentSec !== secondsLeft && currentSec >= 0) {
-          secondsLeft = currentSec;
-          timerSeconds.textContent = secondsLeft;
-          
-          // Micro bump scaling on seconds digit for visual charm
-          timerSeconds.style.transform = "scale(1.2)";
-          setTimeout(() => { timerSeconds.style.transform = "scale(1)"; }, 150);
-        }
+    draw() {
+      ctx.save();
+      ctx.globalAlpha = this.alpha;
+      ctx.translate(this.x, this.y);
+      
+      if (this.isBinary) {
+        ctx.rotate(this.rotation);
+        ctx.font = `bold ${this.size}px 'JetBrains Mono', monospace`;
+        ctx.fillStyle = '#ef4444';
+        ctx.fillText(this.char, 0, 0);
+      } else {
+        // Circular glowing spark
+        ctx.beginPath();
+        ctx.arc(0, 0, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        // Add glow highlight
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = '#ef4444';
+        ctx.fill();
+      }
+      ctx.restore();
+    }
+  }
 
-        if (elapsed < duration) {
-          requestAnimationFrame(updateTimer);
-        } else {
-          // Final redirect to main homepage
-          window.location.href = "https://airevlabs.com";
+  // Trigger Meltdown at precisely 2.0 seconds
+  setTimeout(() => {
+    triggerCoreMeltdown();
+  }, 2000);
+
+  function triggerCoreMeltdown() {
+    // 1. Update elements visually to Meltdown Alert
+    gear.classList.add('meltdown');
+    ambientGlow.classList.add('meltdown');
+    cardContainer.classList.add('meltdown');
+    diagBadge.classList.add('meltdown');
+    titleHeader.classList.add('meltdown');
+    badgeText.textContent = "Status: Core Meltdown";
+
+    // 2. Play subtle haptic scale bump on card
+    cardContainer.style.transform = "scale(0.99)";
+    setTimeout(() => { cardContainer.style.transform = "scale(1)"; }, 120);
+
+    // 3. Initiate Spark and Binary particles burst
+    initiateSparksBurst();
+
+    // 4. Reveal funny message with fade in
+    setTimeout(() => {
+      funnyMessage.style.opacity = 0;
+      setTimeout(() => {
+        funnyMessage.textContent = selectedJoke;
+        funnyMessage.style.opacity = 1;
+      }, 150);
+    }, 200);
+
+    // 5. Activate Action Buttons and Countdown AFTER shatter completes (1 second after meltdown starts)
+    setTimeout(() => {
+      activateCountdownSystem();
+    }, 1000);
+  }
+
+  // Canvas particle engine
+  function initiateSparksBurst() {
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+
+    // Spawn initial burst of 45 particles
+    for (let i = 0; i < 45; i++) {
+      particles.push(new Particle(centerX, centerY));
+    }
+
+    function animLoop() {
+      // Clear canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Update and draw particles
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+        p.update();
+        p.draw();
+
+        // Remove dead particles
+        if (p.alpha <= 0) {
+          particles.splice(i, 1);
         }
       }
 
-      requestAnimationFrame(updateTimer);
+      // Add minor continuous exhaust smoke for first 500ms
+      if (particles.length > 0) {
+        animationFrameId = requestAnimationFrame(animLoop);
+      } else {
+        cancelAnimationFrame(animationFrameId);
+      }
     }
-  </script>
-</body>
-</html>
+
+    animLoop();
+  }
+
+  // Interactive circular countdown system
+  function activateCountdownSystem() {
+    actionsArea.classList.add('active');
+
+    let secondsLeft = 15;
+    const totalOffset = 63; // 2 * PI * r (r = 10)
+    
+    timerSeconds.textContent = secondsLeft;
+    countdownProgress.style.strokeDashoffset = 0;
+
+    // Smooth frame-based countdown animation loop
+    const duration = 15000; // 15 seconds
+    const startTime = performance.now();
+
+    function updateTimer(now) {
+      const elapsed = now - startTime;
+      const remainingFraction = Math.max(0, 1 - (elapsed / duration));
+      
+      // Update SVG circle outline offset
+      countdownProgress.style.strokeDashoffset = totalOffset - (remainingFraction * totalOffset);
+      
+      // Calculate rounded seconds left
+      const currentSec = Math.ceil(remainingFraction * 15);
+      if (currentSec !== secondsLeft && currentSec >= 0) {
+        secondsLeft = currentSec;
+        timerSeconds.textContent = secondsLeft;
+        
+        // Micro bump scaling on seconds digit for visual charm
+        timerSeconds.style.transform = "scale(1.2)";
+        setTimeout(() => { timerSeconds.style.transform = "scale(1)"; }, 150);
+      }
+
+      if (elapsed < duration) {
+        requestAnimationFrame(updateTimer);
+      } else {
+        // Final redirect to main homepage
+        window.location.href = "https://airevlabs.com";
+      }
+    }
+
+    requestAnimationFrame(updateTimer);
+  }
+</script>
