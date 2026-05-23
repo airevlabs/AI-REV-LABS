@@ -46,7 +46,7 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold text-lg mb-6">Company</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
-              <li><Link to="/" className="hover:text-white transition-colors">About Us</Link></li>
+              <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link to="/" className="hover:text-white transition-colors">Process</Link></li>
               <li><Link to="/get-started" className="hover:text-white transition-colors">Contact</Link></li>
               <li><a href="https://app.airevlabs.com" className="hover:text-white transition-colors">Login</a></li>

@@ -70,7 +70,7 @@ export const Hero: React.FC = () => {
         <div className="text-center max-w-4xl mx-auto">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-gray-100 text-sm font-medium mb-8 animate-pulse shadow-sm">
             <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-            Specialized in helping service-based businesses
+            Empowering Small-Midsize Businesses
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-8 leading-tight">

@@ -3,6 +3,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { Home } from './pages/Home';
 import { GetStarted } from './pages/GetStarted';
+import { About } from './pages/About';
 import { ServicesPage } from './pages/ServicesPage';
 import { SmartWebsites } from './pages/SmartWebsites';
 import { BookingCalendar } from './pages/BookingCalendar';
@@ -26,6 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
           <Route path="get-started" element={<GetStarted />} />
           <Route path="services" element={<ServicesPage />} />
           <Route path="services/smart-websites" element={<SmartWebsites />} />
