@@ -83,14 +83,14 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold text-lg mb-6">Connect</h4>
             <div className="flex space-x-4 mb-6">
-              <a href="#" className="w-10 h-10 bg-gray-900 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors">
+              <a href="https://www.facebook.com/airevlabs" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-900 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors">
                 <Icons.Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-gray-900 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors">
+              <a href="https://www.instagram.com/airevlabs/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-900 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors">
                 <Icons.Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-gray-900 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors">
-                <Icons.Linkedin className="w-5 h-5" />
+              <a href="https://www.tiktok.com/@ai.rev.labs" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-900 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors">
+                <Icons.TikTok className="w-5 h-5" />
               </a>
             </div>
             

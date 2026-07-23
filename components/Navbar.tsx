@@ -79,6 +79,10 @@ export const Navbar: React.FC = () => {
               Pricing
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
             </button>
+            <Link to="/faq" className="text-gray-700 hover:text-black font-medium transition-colors relative group">
+              FAQs
+              <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+            </Link>
              <button onClick={handleGetStarted} className="bg-black text-white px-6 py-2 rounded-full font-medium hover:bg-gray-800 transition-all hover:scale-105 active:scale-95">
               Get Started
             </button>
@@ -103,6 +107,7 @@ export const Navbar: React.FC = () => {
            <button onClick={() => scrollToSection('services')} className="block w-full py-3 text-center text-gray-800 hover:bg-gray-50 font-medium">Services</button>
            <button onClick={() => scrollToSection('how-it-works')} className="block w-full py-3 text-center text-gray-800 hover:bg-gray-50 font-medium">How it Works</button>
            <button onClick={() => scrollToSection('pricing')} className="block w-full py-3 text-center text-gray-800 hover:bg-gray-50 font-medium">Pricing</button>
+           <Link to="/faq" onClick={() => setIsOpen(false)} className="block w-full py-3 text-center text-gray-800 hover:bg-gray-50 font-medium">FAQs</Link>
            <button onClick={handleGetStarted} className="block w-full py-3 text-center text-black font-bold bg-gray-50 mt-2">Get Started</button>
         </div>
       </div>
