@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Infographic | AI Rev Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.07);
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --accent-blue: #3b82f6;
+            --accent-cyan: #00f2fe;
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+                radial-gradient(circle, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 30px 30px;
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            overflow-x: hidden;
+        }
+
+        /* Mode Toggle */
+        .controls {
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1rem;
+            z-index: 10;
+        }
+
+        .btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 9999px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .btn.active {
+            background: var(--text-primary);
+            color: var(--bg-color);
+            border-color: var(--text-primary);
+        }
+
+        /* Container */
+        .infographic-wrapper {
+            position: relative;
+            background-color: #0b0c10;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Mode: Instagram Square */
+        .mode-square {
+            width: 1080px;
+            height: 1080px;
+            padding: 3.5rem;
+            border-radius: 0;
+            overflow: hidden;
+        }
+
+        /* Mode: Responsive Web */
+        .mode-responsive {
+            width: 100%;
+            max-width: 1200px;
+            padding: 4rem 2rem;
+            border-radius: 1.5rem;
+        }
+
+        /* Branding Header */
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .logo-container {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: #000000;
+            padding: 0.6rem 1.2rem;
+            border-radius: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .logo-icon {
+            color: #ffffff;
+            animation: spin 12s linear infinite;
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #ffffff 60%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .mode-square h1 {
+            font-size: 2.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* Grid */
+        .services-grid {
+            display: grid;
+            gap: 1rem;
+            flex-grow: 1;
+            align-content: center;
+        }
+
+        /* Layout modifications per mode */
+        .mode-square .services-grid {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .mode-responsive .services-grid {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        @media (min-width: 640px) {
+            .mode-responsive .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .mode-responsive .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        /* Card */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 1rem;
+            padding: 1.25rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mode-square .card {
+            padding: 1rem 1.15rem;
+            border-radius: 0.75rem;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent-blue), var(--accent-cyan));
+            opacity: 0.4;
+            transition: opacity 0.3s;
+        }
+
+        .card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px -6px var(--accent-glow);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .icon-wrapper {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 0.6rem;
+            border-radius: 0.75rem;
+            color: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s;
+        }
+
+        .card:hover .icon-wrapper {
+            background: var(--text-primary);
+            color: #000000;
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            color: var(--text-primary);
+        }
+
+        .mode-square h3 {
+            font-size: 0.95rem;
+        }
+
+        p.card-desc {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .mode-square p.card-desc {
+            font-size: 0.75rem;
+        }
+
+        /* Footer Info */
+        footer {
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .mode-square footer {
+            padding-top: 1.25rem;
+        }
+
+        .footer-tagline {
+            text-transform: uppercase;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-link {
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        /* Screenshot Guide overlay */
+        .screenshot-guide {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.75rem;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .mode-square:hover .screenshot-guide {
+            opacity: 1;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Toggle Controls -->
+    <div class="controls">
+        <button id="btn-square" class="btn active">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <rect width="18" height="18" x="3" y="3" rx="2" stroke-linecap="round" stroke-linejoin="round"></rect>
+            </svg>
+            1:1 Post Grid (Screenshot Mode)
+        </button>
+        <button id="btn-responsive" class="btn">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.467 5.99 5.99 0 0 0-1.925 3.546 5.974 5.974 0 0 1-2.133-1A3.75 3.75 0 0 0 12 18Z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v.008a.75.75 0 0 1-.75.75h-.008a.75.75 0 0 1-.75-.75v-.008a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75Z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5V15m0-10.5a3 3 0 1 0-6 0v2.25m6-2.25h3.562a1.5 1.5 0 0 1 1.06.44l3.182 3.182a1.5 1.5 0 0 1 .44 1.06V18a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3v-7.5"></path>
+            </svg>
+            Responsive Grid (Web Mode)
+        </button>
+    </div>
+
+    <!-- Infographic Container -->
+    <div id="wrapper" class="infographic-wrapper mode-square">
+        
+        <div class="screenshot-guide">💡 Tip: Press Alt + PrintScreen or use Snipping Tool to copy this perfect 1:1 post!</div>
+
+        <!-- Branding Header -->
+        <header>
+            <div class="logo-container">
+                <svg class="logo-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.5.45l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.04.27.25.45.5.45h4c.25 0 .46-.18.5-.45l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
+                </svg>
+                <span class="logo-text">AI Rev Labs</span>
+            </div>
+            <h1>Comprehensive Growth Systems</h1>
+            <p class="subtitle">Complete Business Automation Suite</p>
+        </header>
+
+        <!-- Services Grid -->
+        <main class="services-grid">
+            
+            <!-- 1. Smart Website Builds -->
+            <div class="card">
+                <div class="icon-wrapper">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 2a14.5 14.5 0 0 0 0 20M2 12h20"></path>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3>Smart Website Builds</h3>
+                    <p class="card-desc">Websites, funnels & payments optimized for SEO & AI search.</p>
+                </div>
+            </div>
+
+            <!-- 2. Booking Calendar -->
+            <div class="card">
+                <div class="icon-wrapper">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+                        <line x1="16" x2="16" y1="2" y2="6"></line>
+                        <line x1="8" x2="8" y1="2" y2="6"></line>
+                        <line x1="3" x2="21" y1="10" y2="10"></line>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3>Booking Calendar</h3>
+                    <p class="card-desc">Automated self-service appointment booking & reminders.</p>
+                </div>
+            </div>
+
+            <!-- 3. CRM -->
+            <div class="card">
+                <div class="icon-wrapper">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3>Integrated CRM</h3>
+                    <p class="card-desc">Track contacts, deals, notes, and pipelines in one workspace.</p>
+                </div>
+            </div>
+
+            <!-- 4. AI Phone Receptionist -->
+            <div class="card">
+                <div class="icon-wrapper">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3>AI Phone Receptionist</h3>
+                    <p class="card-desc">Intelligent voice agent answering and booking calls 24/7.</p>
+                </div>
+            </div>
+
+            <!-- 5. AI Chatbot -->
+            <div class="card">
+                <div class="icon-wrapper">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3>Interactive AI Chatbot</h3>
+                    <p class="card-desc">Instantly capture engagements across web, SMS, & social.</p>
+                </div>
+            </div>
+
+            <!-- 6. Reputation Management -->
+            <div class="card">
+                <div class="icon-wrapper">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m12 5 2 5h5l-4 4 2.5 6.5-5.5-4-5.5 4 2.5-6.5-4-4h5z"></path>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3>Reputation Management</h3>
+                    <p class="card-desc">Automate 5-star review generation and negative review triage.</p>
+                </div>
+            </div>
+
+            <!-- 7. Local SEO -->
+            <div class="card">
+                <div class="icon-wrapper">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3>Local SEO Sync</h3>
+                    <p class="card-desc">Dominate maps searches with GBP & 40+ directory syncs.</p>
+                </div>
+            </div>
+
+            <!-- 8. Lead Reactivation -->
+            <div class="card">
+                <div class="icon-wrapper">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                        <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3>Lead Reactivation</h3>
+                    <p class="card-desc">Turn dead cold lists into immediate profit via targeted campaigns.</p>
+                </div>
+            </div>
+
+            <!-- 9. Email & SMS Campaigns -->
+            <div class="card">
+                <div class="icon-wrapper">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3>Email & SMS Campaigns</h3>
+                    <p class="card-desc">Schedule, personalize, and track marketing broadcasts.</p>
+                </div>
+            </div>
+
+            <!-- 10. Social Media Planner -->
+            <div class="card">
+                <div class="icon-wrapper">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="18" cy="5" r="3"></circle>
+                        <circle cx="6" cy="12" r="3"></circle>
+                        <circle cx="18" cy="19" r="3"></circle>
+                        <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
+                        <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3>Social Media Planner</h3>
+                    <p class="card-desc">Schedule and publish content across social platforms in one dashboard.</p>
+                </div>
+            </div>
+
+            <!-- 11. Invoicing & Payments -->
+            <div class="card">
+                <div class="icon-wrapper">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                        <line x1="2" x2="22" y1="10" y2="10"></line>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3>Invoicing & Payments</h3>
+                    <p class="card-desc">Send payment links, invoices, and connect Stripe/PayPal/Square.</p>
+                </div>
+            </div>
+
+            <!-- 12. Documents & Contracts -->
+            <div class="card">
+                <div class="icon-wrapper">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3>Documents & Contracts</h3>
+                    <p class="card-desc">Digitally create, request, and execute signatures on contracts.</p>
+                </div>
+            </div>
+
+            <!-- 13. Missed Call Text Back -->
+            <div class="card">
+                <div class="icon-wrapper">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="22" x2="16" y1="2" y2="8"></line>
+                        <line x1="16" x2="22" y1="2" y2="8"></line>
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3>Missed Call Text Back</h3>
+                    <p class="card-desc">Automatically text missed calls instantly to save lost business.</p>
+                </div>
+            </div>
+
+            <!-- 14. Workflow Automations -->
+            <div class="card">
+                <div class="icon-wrapper">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3>Workflow Automations</h3>
+                    <p class="card-desc">Build automated pipelines, triggers, and sequences 24/7.</p>
+                </div>
+            </div>
+
+            <!-- 15. Custom Automations -->
+            <div class="card">
+                <div class="icon-wrapper">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h3>Custom Automation</h3>
+                    <p class="card-desc">Bespoke AI configurations tailored to fit your custom workflow.</p>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <span class="footer-tagline">Automate Your Business • Scale Your Growth</span>
+            <a href="https://airevlabs.com" class="footer-link">www.airevlabs.com</a>
+        </footer>
+
+    </div>
+
+    <script>
+        const btnSquare = document.getElementById('btn-square');
+        const btnResponsive = document.getElementById('btn-responsive');
+        const wrapper = document.getElementById('wrapper');
+
+        btnSquare.addEventListener('click', () => {
+            wrapper.className = 'infographic-wrapper mode-square';
+            btnSquare.classList.add('active');
+            btnResponsive.classList.remove('active');
+        });
+
+        btnResponsive.addEventListener('click', () => {
+            wrapper.className = 'infographic-wrapper mode-responsive';
+            btnResponsive.classList.add('active');
+            btnSquare.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

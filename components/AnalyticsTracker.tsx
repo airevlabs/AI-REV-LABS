@@ -14,7 +14,10 @@ export const AnalyticsTracker: React.FC = () => {
   useEffect(() => {
     // Check if gtag/dataLayer is initialized
     if (typeof window.dataLayer !== 'undefined' && typeof window.gtag !== 'undefined') {
+      // For HashRouter, location.pathname represents the path after the '#'
+      // By sending this as the page_path, GA4 will record these as separate pages
       window.gtag('event', 'page_view', {
+        page_title: document.title,
         page_path: location.pathname + location.search + location.hash,
         page_location: window.location.href,
       });

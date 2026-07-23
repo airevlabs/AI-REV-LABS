@@ -1,0 +1,653 @@
+/* ==========================================================================
+   Instagram Carousel Redesign - Stylesheet
+   Each carousel uses a unique theme, color scheme, and typography stack.
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #121212;
+  color: #E0E0E0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+}
+
+h1.gallery-title {
+  font-size: 52px;
+  font-weight: 800;
+  text-align: center;
+  background: linear-gradient(90deg, #37ca37, #188bf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+p.gallery-subtitle {
+  color: #888;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.carousel-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.carousel-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #888;
+  border-bottom: 2px solid #2A2A2A;
+  padding-bottom: 12px;
+  width: 100%;
+  text-align: left;
+}
+
+.slides-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+}
+
+/* ==========================================================================
+   Base Slide Design
+   ========================================================================== */
+.slide {
+  position: relative;
+  width: 540px;
+  height: 675px; /* Locked 4:5 aspect ratio */
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 55px 45px 75px 45px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.slide-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   Global Utilities & Reusable Elements
+   ========================================================================== */
+.swipe-arrow {
+  position: absolute;
+  bottom: 25px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.6;
+  z-index: 10;
+}
+.swipe-arrow span {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+.swipe-arrow svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.5;
+  fill: none;
+}
+
+.progress-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.12);
+  z-index: 10;
+}
+.theme-retro .progress-container,
+.theme-minimal .progress-container,
+.theme-trust .progress-container {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.progress-fill {
+  height: 100%;
+  border-radius: 0 4px 4px 0;
+}
+.text-red {
+  color: #E53E3E !important;
+}
+
+.checklist {
+  list-style: none;
+  margin-top: 20px;
+}
+.checklist li {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.checklist li svg {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  fill: none;
+  stroke-width: 2.5;
+}
+
+.cta-box {
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  margin-top: auto;
+  width: 100%;
+}
+
+.content-center {
+  align-items: center;
+  text-align: center;
+}
+
+.icon-wrapper {
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-wrapper svg {
+  width: 80px;
+  height: 80px;
+  fill: none;
+  stroke-width: 2;
+}
+.icon-wrapper.large svg {
+  width: 110px;
+  height: 110px;
+}
+
+
+/* ==========================================================================
+   THEME 1: Warm Retro-Modern (Light Mode)
+   ========================================================================== */
+.theme-retro {
+  background-color: #FDFBF7;
+  color: #1F1F1F;
+  border: 3px solid #1F1F1F;
+  box-shadow: 10px 10px 0px #1F1F1F;
+  border-radius: 16px;
+}
+
+.theme-retro .title-xl {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: #1F1F1F;
+}
+
+.theme-retro .title-lg {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 34px;
+  line-height: 1.2;
+  color: #1F1F1F;
+}
+
+.theme-retro .text-md {
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #4A4A4A;
+}
+
+.theme-retro .highlight {
+  background-color: #FF5A36;
+  color: #FDFBF7;
+  padding: 2px 10px;
+  border-radius: 6px;
+  border: 2px solid #1F1F1F;
+  display: inline-block;
+}
+
+.theme-retro .glass-card {
+  background: #FFF;
+  border: 3px solid #1F1F1F;
+  box-shadow: 6px 6px 0px #1F1F1F;
+  border-radius: 12px;
+  padding: 25px;
+  margin-top: 20px;
+}
+
+.theme-retro .checklist li {
+  font-family: 'Inter', sans-serif;
+}
+.theme-retro .checklist li.check svg {
+  stroke: #2E7D82;
+}
+
+.theme-retro .cta-box {
+  background-color: #EBF7F7;
+  border: 3px solid #1F1F1F;
+  box-shadow: 6px 6px 0px #1F1F1F;
+}
+.theme-retro .cta-box h2 {
+  color: #2E7D82;
+  font-family: 'Fraunces', serif;
+  font-size: 36px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.theme-retro .icon-wrapper svg {
+  stroke: #FF5A36;
+}
+.theme-retro .swipe-arrow {
+  opacity: 0.8;
+  color: #1F1F1F;
+}
+.theme-retro .swipe-arrow svg {
+  stroke: #1F1F1F;
+}
+.theme-retro .progress-fill {
+  background-color: #FF5A36;
+}
+.theme-retro .strike {
+  text-decoration: line-through;
+  text-decoration-color: #FF5A36;
+  text-decoration-thickness: 4px;
+}
+
+
+/* ==========================================================================
+   THEME 2: Clean Tech Minimalist (Light Mode)
+   ========================================================================== */
+.theme-minimal {
+  background-color: #F8FAFC;
+  color: #334155;
+  border: 1px solid #E2E8F0;
+  /* Thin tech grid background overlay */
+  background-image: linear-gradient(rgba(226, 232, 240, 0.4) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(226, 232, 240, 0.4) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.theme-minimal .title-xl {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 42px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #0F172A;
+  margin-bottom: 20px;
+}
+
+.theme-minimal .title-lg {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 1.25;
+  color: #0F172A;
+}
+
+.theme-minimal .text-md {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #475569;
+}
+
+.theme-minimal .text-sm {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #3B82F6;
+  margin-bottom: 10px;
+}
+
+.theme-minimal .glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 10px 25px rgba(148, 163, 184, 0.1);
+  border-radius: 16px;
+  padding: 30px;
+  margin-top: 20px;
+}
+
+.theme-minimal .checklist li.check svg {
+  stroke: #10B981;
+}
+
+.theme-minimal .cta-box {
+  background: #FFF;
+  border: 1px solid #3B82F6;
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.08);
+}
+.theme-minimal .cta-box h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  color: #3B82F6;
+  margin-bottom: 10px;
+}
+
+.theme-minimal .icon-wrapper svg {
+  stroke: #3B82F6;
+}
+.theme-minimal .swipe-arrow {
+  color: #64748B;
+}
+.theme-minimal .swipe-arrow svg {
+  stroke: #64748B;
+}
+.theme-minimal .progress-fill {
+  background: linear-gradient(90deg, #3B82F6, #10B981);
+}
+
+
+/* ==========================================================================
+   THEME 3: Obsidian Urgent (Dark Mode)
+   ========================================================================== */
+.theme-obsidian {
+  background-color: #070B19;
+  color: #ABC1DE;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Red radial warning glow */
+.theme-obsidian::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background-color: #EF4444;
+  filter: blur(120px);
+  opacity: 0.12;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.theme-obsidian .title-xl {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 46px;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.theme-obsidian .title-lg {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  color: #FFFFFF;
+}
+
+.theme-obsidian .text-md {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #CBD5E1;
+}
+
+.theme-obsidian .text-alert {
+  color: #F87171;
+}
+.theme-obsidian .text-gold {
+  color: #FBBF24;
+}
+
+.theme-obsidian .glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 30px;
+  margin-top: 20px;
+}
+
+.theme-obsidian .checklist li.cross svg {
+  stroke: #EF4444;
+}
+.theme-obsidian .checklist li.check svg {
+  stroke: #FBBF24;
+}
+
+.theme-obsidian .cta-box {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid #EF4444;
+}
+.theme-obsidian .cta-box h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 38px;
+  color: #EF4444;
+  margin-bottom: 10px;
+}
+
+.theme-obsidian .icon-wrapper svg {
+  stroke: #EF4444;
+}
+.theme-obsidian .swipe-arrow {
+  color: #64748B;
+}
+.theme-obsidian .swipe-arrow svg {
+  stroke: #64748B;
+}
+.theme-obsidian .progress-fill {
+  background: linear-gradient(90deg, #EF4444, #FBBF24);
+}
+
+
+/* ==========================================================================
+   THEME 4: Professional Trust (Light Mode)
+   ========================================================================== */
+.theme-trust {
+  background-color: #FFFFFF;
+  color: #2D3748;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.theme-trust .title-xl {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 45px;
+  line-height: 1.15;
+  color: #0F2942;
+  margin-bottom: 20px;
+}
+
+.theme-trust .title-lg {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 34px;
+  line-height: 1.25;
+  color: #0F2942;
+}
+
+.theme-trust .text-md {
+  font-family: 'Outfit', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #4A5568;
+}
+
+.theme-trust .text-green {
+  color: #10B981;
+}
+
+.theme-trust .glass-card {
+  background: #F7FAFC;
+  border: 1px solid #EDF2F7;
+  border-radius: 16px;
+  padding: 30px;
+  margin-top: 20px;
+}
+
+.theme-trust .checklist li.check svg {
+  stroke: #10B981;
+}
+
+.theme-trust .cta-box {
+  background: #F0FDF4;
+  border: 1px solid #10B981;
+}
+.theme-trust .cta-box h2 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 38px;
+  color: #10B981;
+  margin-bottom: 10px;
+}
+
+.theme-trust .icon-wrapper svg {
+  stroke: #10B981;
+}
+.theme-trust .swipe-arrow {
+  color: #718096;
+}
+.theme-trust .swipe-arrow svg {
+  stroke: #718096;
+}
+.theme-trust .progress-fill {
+  background: #10B981;
+}
+
+
+/* ==========================================================================
+   THEME 5: Bold Editorial / Brutalist (Dark Mode)
+   ========================================================================== */
+.theme-brutalist {
+  background-color: #000000;
+  color: #FFFFFF;
+  border: 4px solid #CCFF00;
+}
+
+.theme-brutalist .title-xl {
+  font-family: 'Archivo Black', sans-serif;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: 25px;
+}
+
+.theme-brutalist .title-lg {
+  font-family: 'Archivo Black', sans-serif;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.theme-brutalist .text-md {
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.6;
+  color: #E2E8F0;
+}
+
+.theme-brutalist .highlight {
+  background-color: #CCFF00;
+  color: #000000;
+  padding: 4px 12px;
+  text-transform: uppercase;
+  font-family: 'Archivo Black', sans-serif;
+  display: inline-block;
+}
+
+.theme-brutalist .glass-card {
+  background: #000;
+  border: 3px solid #CCFF00;
+  border-radius: 0px;
+  padding: 25px;
+  margin-top: 20px;
+}
+
+.theme-brutalist .checklist li.cross svg {
+  stroke: #FF007F;
+}
+.theme-brutalist .checklist li.check svg {
+  stroke: #CCFF00;
+}
+
+.theme-brutalist .cta-box {
+  background-color: #CCFF00;
+  border: 4px solid #CCFF00;
+  border-radius: 0px;
+}
+.theme-brutalist .cta-box h2 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 38px;
+  color: #000000;
+  margin-bottom: 8px;
+}
+.theme-brutalist .cta-box p {
+  color: #000000;
+  font-weight: bold;
+}
+
+.theme-brutalist .icon-wrapper svg {
+  stroke: #CCFF00;
+}
+.theme-brutalist .swipe-arrow {
+  color: #CCFF00;
+  font-family: monospace;
+}
+.theme-brutalist .swipe-arrow svg {
+  stroke: #CCFF00;
+}
+.theme-brutalist .progress-fill {
+  background: #CCFF00;
+}
+
+/* Progress Steps Widths */
+.step-1-5 { width: 20%; }
+.step-2-5 { width: 40%; }
+.step-3-5 { width: 60%; }
+.step-4-5 { width: 80%; }
+.step-5-5 { width: 100%; }
+
+.step-1-6 { width: 16.66%; }
+.step-2-6 { width: 33.33%; }
+.step-3-6 { width: 50%; }
+.step-4-6 { width: 66.66%; }
+.step-5-6 { width: 83.33%; }
+.step-6-6 { width: 100%; }
