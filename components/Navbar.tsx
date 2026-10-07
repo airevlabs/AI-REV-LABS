@@ -75,10 +75,10 @@ export const Navbar: React.FC = () => {
               How it Works
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
             </button>
-             <button onClick={() => scrollToSection('pricing')} className="text-gray-700 hover:text-black font-medium transition-colors relative group">
-              Pricing
+            <a href="https://airevlabs.com/blog/" className="text-gray-700 hover:text-black font-medium transition-colors relative group">
+              Blog
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
-            </button>
+            </a>
             <Link to="/faq" className="text-gray-700 hover:text-black font-medium transition-colors relative group">
               FAQs
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
@@ -106,7 +106,7 @@ export const Navbar: React.FC = () => {
         <div className="px-4 pt-2 pb-6 space-y-2 flex flex-col items-center">
            <button onClick={() => scrollToSection('services')} className="block w-full py-3 text-center text-gray-800 hover:bg-gray-50 font-medium">Services</button>
            <button onClick={() => scrollToSection('how-it-works')} className="block w-full py-3 text-center text-gray-800 hover:bg-gray-50 font-medium">How it Works</button>
-           <button onClick={() => scrollToSection('pricing')} className="block w-full py-3 text-center text-gray-800 hover:bg-gray-50 font-medium">Pricing</button>
+           <a href="https://airevlabs.com/blog/" onClick={() => setIsOpen(false)} className="block w-full py-3 text-center text-gray-800 hover:bg-gray-50 font-medium">Blog</a>
            <Link to="/faq" onClick={() => setIsOpen(false)} className="block w-full py-3 text-center text-gray-800 hover:bg-gray-50 font-medium">FAQs</Link>
            <button onClick={handleGetStarted} className="block w-full py-3 text-center text-black font-bold bg-gray-50 mt-2">Get Started</button>
         </div>

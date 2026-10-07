@@ -76,6 +76,7 @@ export const Footer: React.FC = () => {
                 </button>
               </li>
               <li><Link to="/faq" className="hover:text-white transition-colors">FAQs</Link></li>
+              <li><a href="https://airevlabs.com/blog/" className="hover:text-white transition-colors">Blog</a></li>
               <li><a href="https://app.airevlabs.com" className="hover:text-white transition-colors">Customer Login</a></li>
             </ul>
           </div>
